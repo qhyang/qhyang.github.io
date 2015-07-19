@@ -12,22 +12,19 @@
 
     
     <meta name="description" content="配置主题hexo的主题[列表]（https://github.com/hexojs/hexo/wiki/Themes），本站使用的是jacman。
-安装在博客根目录下执行如下命令。1$ git clone https://github.com/wuchong/jacman.git themes/jacman
-启用修改你的博客根目录下的_config.yml配置文件中的theme属性，将其设置为ja">
+安装在博客根目录下执行如下命令。1$ git clone https://github.com/wuchong/jacman.git themes/jacman">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo+github搭建个人博客——优化">
 <meta property="og:url" content="http://yangqinghua.com/2015/07/20/Hexo+github搭建个人博客——优化/index.html">
 <meta property="og:site_name" content="tsinghua">
 <meta property="og:description" content="配置主题hexo的主题[列表]（https://github.com/hexojs/hexo/wiki/Themes），本站使用的是jacman。
-安装在博客根目录下执行如下命令。1$ git clone https://github.com/wuchong/jacman.git themes/jacman
-启用修改你的博客根目录下的_config.yml配置文件中的theme属性，将其设置为ja">
+安装在博客根目录下执行如下命令。1$ git clone https://github.com/wuchong/jacman.git themes/jacman">
 <meta property="og:image" content="http://yangqinghua.com/img/baidutongji.png">
-<meta property="og:updated_time" content="2015-07-19T18:48:18.000Z">
+<meta property="og:updated_time" content="2015-07-19T18:51:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+github搭建个人博客——优化">
 <meta name="twitter:description" content="配置主题hexo的主题[列表]（https://github.com/hexojs/hexo/wiki/Themes），本站使用的是jacman。
-安装在博客根目录下执行如下命令。1$ git clone https://github.com/wuchong/jacman.git themes/jacman
-启用修改你的博客根目录下的_config.yml配置文件中的theme属性，将其设置为ja">
+安装在博客根目录下执行如下命令。1$ git clone https://github.com/wuchong/jacman.git themes/jacman">
 
     
     <link rel="alternative" href="/atom.xml" title="tsinghua" type="application/atom+xml">
@@ -108,6 +105,7 @@
 		
 		<h2 id="配置主题">配置主题</h2><p>hexo的主题[列表]（<a href="https://github.com/hexojs/hexo/wiki/Themes）" target="_blank" rel="external">https://github.com/hexojs/hexo/wiki/Themes）</a><br>，本站使用的是<a href="https://github.com/wuchong/jacman.git themes/jacman" target="_blank" rel="external">jacman</a>。</p>
 <h3 id="安装">安装</h3><p>在博客根目录下执行如下命令。<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git clone <span class="symbol">https:</span>/<span class="regexp">/github.com/wuchong</span><span class="regexp">/jacman.git themes/jacman</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h3 id="启用">启用</h3><p>修改你的博客根目录下的_config.yml配置文件中的theme属性，将其设置为jacman。同时建议设置stylus属性中的compress值为true，会自动压缩 CSS 文件，hexo默认配置中不包含这一项，建议开启。如下。<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">theme:</span> jacman</span><br><span class="line"><span class="string">stylus:</span></span><br><span class="line"><span class="label">  compress:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="微博秀">微博秀</h2><p>在<a href="http://app.weibo.com/tool/weiboshow" target="_blank" rel="external">微博秀</a>设置和生成代码<br>在主题 /layout/_widget 中新建 weibo.ejs 文件，保存刚刚复制的代码<br>在主题配置文件添加<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">widgets:</span><br><span class="line"><span class="bullet">- </span>weibo</span><br></pre></td></tr></table></figure></p>
 <h2 id="自定义_404_页面">自定义 404 页面</h2><p>在根目录下的source文件夹中添加404.html，html中的代码如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>404|tsinghua<span class="tag">&lt;<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://www.qq.com/404/search_children.js"</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
