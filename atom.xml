@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  
+  <title><![CDATA[tsinghua]]></title>
+  <subtitle><![CDATA[梦想不是浮躁，而是沉淀和积累。]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://yangqinghua.com//"/>
+  <updated>2015-07-19T19:01:16.000Z</updated>
+  <id>http://yangqinghua.com//</id>
+  
+  <author>
+    <name><![CDATA[yangqinghua]]></name>
+    <email><![CDATA[qhyang.bit@gmail.com]]></email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hexo+github搭建个人博客——优化]]></title>
+    <link href="http://yangqinghua.com/2015/07/20/Hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94%E4%BC%98%E5%8C%96/"/>
+    <id>http://yangqinghua.com/2015/07/20/Hexo+github搭建个人博客——优化/</id>
+    <published>2015-07-19T18:09:05.000Z</published>
+    <updated>2015-07-19T19:01:16.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="配置主题">配置主题</h2><p>hexo有很多主题，可以根据个人喜好选择，这是主题列表链接：<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">https://github.com/hexojs/hexo/wiki/Themes</a><br>，本站使用的是<a href="https://github.com/wuchong/jacman.git themes/jacman" target="_blank" rel="external">jacman</a>。</p>
+<h3 id="安装">安装</h3><p>在博客根目录下执行如下命令。<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git clone <span class="symbol">https:</span>/<span class="regexp">/github.com/wuchong</span><span class="regexp">/jacman.git themes/jacman</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h3 id="启用">启用</h3><p>修改你的博客根目录下的_config.yml配置文件中的theme属性，将其设置为jacman。同时建议设置stylus属性中的compress值为true，会自动压缩 CSS 文件，hexo默认配置中不包含这一项，建议开启。如下。<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">theme:</span> jacman</span><br><span class="line"><span class="string">stylus:</span></span><br><span class="line"><span class="label">  compress:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="微博秀">微博秀</h2><p>在<a href="http://app.weibo.com/tool/weiboshow" target="_blank" rel="external">微博秀</a>设置和生成代码<br>在主题 /layout/_widget 中新建 weibo.ejs 文件，保存刚刚复制的代码<br>在主题配置文件添加<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">widgets:</span><br><span class="line"><span class="bullet">- </span>weibo</span><br></pre></td></tr></table></figure></p>
+<h2 id="自定义_404_页面">自定义 404 页面</h2><p>在根目录下的source文件夹中添加404.html，html中的代码如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>404|tsinghua<span class="tag">&lt;<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://www.qq.com/404/search_children.js"</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>建议使用公益404页面，这是是由腾讯公司员工志愿者自主发起的互联网公益活动。</p>
+<h2 id="about界面">about界面</h2><p>在根目录下，执行以下命令<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> page <span class="string">"about"</span></span><br></pre></td></tr></table></figure></p>
+<p>编辑 source/about/index.md：<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: about me</span><br><span class="line"><span class="header">date: 2015-07-18 15:49:05</span><br><span class="line">---</span></span><br></pre></td></tr></table></figure></p>
+<p>在主题的配置文件里添加入口<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">menu</span>:</span><br><span class="line">  <span class="attribute">About</span>: /about</span><br></pre></td></tr></table></figure></p>
+<h2 id="文章摘要">文章摘要</h2><p>在摘要文字后面插入<br><code>&lt;!--more--&gt;</code><br>可以在主题的配置文件中设置要显示的文字<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">excerpt_link</span>: <span class="string">阅读全文</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="评论_comments">评论 comments</h2><p>填写duoshuo_shortname<a href="http://duoshuo.com/" target="_blank" rel="external">多说</a>的用户名，启用多说评论系统。</p>
+<h2 id="网站统计_Analytics">网站统计 Analytics</h2><p>baidu_tongji：百度统计功能。需要填写站点特征码sitecode，在<a href="http://tongji.baidu.com/web/welcome/login" target="_blank" rel="external">百度统计</a>注册并配置站点后，获取特征码。特征码可以在「网站中心」-&gt; 「代码获取」中查看，如下图所示的<br><img src="/img/baidutongji.png" alt="baidu"><br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">baidu_tongji</span>:</span><br><span class="line">  <span class="attribute">enable</span>: false</span><br><span class="line">  <span class="attribute">sitecode</span>: 填写图片所示的code</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="配置主题">配置主题</h2><p>hexo有很多主题，可以根据个人喜好选择，这是主题列表链接：<a href="https://github.com/hexojs/hexo/wiki/Themes">https://github.com/hexojs/hexo/wiki/Themes</a><br>，本站使用的是<a href="https://github.com/wuchong/jacman.git themes/jacman">jacman</a>。</p>
+<h3 id="安装">安装</h3><p>在博客根目录下执行如下命令。<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git clone <span class="symbol">https:</span>/<span class="regexp">/github.com/wuchong</span><span class="regexp">/jacman.git themes/jacman</span></span><br></pre></td></tr></table></figure></p>]]>
+    
+    </summary>
+    
+      <category term="blog" scheme="http://yangqinghua.com/tags/blog/"/>
+    
+      <category term="hexo" scheme="http://yangqinghua.com/tags/hexo/"/>
+    
+      <category term="Hexo" scheme="http://yangqinghua.com/categories/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hexo+github搭建个人博客——绑定域名]]></title>
+    <link href="http://yangqinghua.com/2015/07/20/Hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/"/>
+    <id>http://yangqinghua.com/2015/07/20/Hexo+github搭建个人博客——绑定域名/</id>
+    <published>2015-07-19T17:07:05.000Z</published>
+    <updated>2015-07-19T17:42:03.000Z</updated>
+    <content type="html"><![CDATA[<p>虽然username.gitcafe.io可以访问到个人博客，显然不够酷炫，于是在万网上买了个域名yangqinghua.com,这才是自己的。</p>
+<h2 id="域名注册">域名注册</h2><p>域名可以在很多地方购买，我这里是在<a href="http://wanwang.aliyun.com/" target="_blank" rel="external">万网</a>上买的。怎么注册，这有一个<a href="http://jingyan.baidu.com/article/4853e1e513d0061908f7265b.html" target="_blank" rel="external">教程</a>,跟着一步一步走，很简单。<br><a id="more"></a></p>
+<h2 id="域名绑定">域名绑定</h2><h3 id="1-添加CNAME文件">1.添加CNAME文件</h3><p>在github仓库根目录下创建一个名为CNAME的文件，里面内容就是你的域名。</p>
+<p>如example.com，不需要加http，www这样的前缀。<br><img src="/img/github.png" alt="github"></p>
+<h3 id="2-在万网解析">2.在万网解析</h3><p>首先通过ping 你在github上的主页（×××.github.io）来获取ip地址。其实github.io的IP一般是103.245.222.133。然后在万网的域名解析界面按如下设置，记录值填刚刚记录下的ip地址。<br><img src="/img/dns.jpg" alt="dns"><br>这里有两种域名绑定的方式：A类型。</p>
+<h3 id="3-配置完了之后经过一段时间的等待就能通过域名访问在github上的博客啦。">3.配置完了之后经过一段时间的等待就能通过域名访问在github上的博客啦。</h3>]]></content>
+    <summary type="html">
+    <![CDATA[<p>虽然username.gitcafe.io可以访问到个人博客，显然不够酷炫，于是在万网上买了个域名yangqinghua.com,这才是自己的。</p>
+<h2 id="域名注册">域名注册</h2><p>域名可以在很多地方购买，我这里是在<a href="http://wanwang.aliyun.com/">万网</a>上买的。怎么注册，这有一个<a href="http://jingyan.baidu.com/article/4853e1e513d0061908f7265b.html">教程</a>,跟着一步一步走，很简单。<br>]]>
+    
+    </summary>
+    
+      <category term="blog" scheme="http://yangqinghua.com/tags/blog/"/>
+    
+      <category term="hexo" scheme="http://yangqinghua.com/tags/hexo/"/>
+    
+      <category term="Hexo" scheme="http://yangqinghua.com/categories/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hexo+github搭建个人博客——使用]]></title>
+    <link href="http://yangqinghua.com/2015/07/19/Hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yangqinghua.com/2015/07/19/Hexo+github搭建个人博客——使用/</id>
+    <published>2015-07-19T15:49:05.000Z</published>
+    <updated>2015-07-19T17:05:59.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="目录结构">目录结构</h2><p>打开工作区文件加可以看到：</p>
+<p></p><p><br>├── deploy       #需要部署的文件<br>├── node_modules  #Hexo插件<br>├── public        #生成的静态网页文件<br>├── scaffolds     #模板<br>├── source        #博客正文和其他源文件，404、favicon、CNAME 都应该放在这里<br>├── _drafts   #草稿<br>├──  _posts    #文章<br>├── themes        #主题<br>├── _config.yml   #全局配置文件<br>└── package.json<br></p><br><a id="more"></a><p></p>
+<h2 id="全局配置__config-yml">全局配置 _config.yml</h2><p><code>配置文件的冒号“:”后面有空格,不然报错</code><br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># Hexo Configuration</span></span><br><span class="line"><span class="preprocessor">## Docs: http://hexo.io/docs/configuration.html</span></span><br><span class="line"><span class="preprocessor">## Source: https://github.com/hexojs/hexo/</span></span><br><span class="line"><span class="preprocessor"># Site #站点信息</span></span><br><span class="line"><span class="label">title:</span> tsinghua <span class="preprocessor">#标题</span></span><br><span class="line"><span class="label">subtitle:</span> 梦想不是浮躁，而是沉淀 <span class="preprocessor">#副标题</span></span><br><span class="line"><span class="label">description:</span> 杨卿华 blog <span class="preprocessor">#站点描述，给搜索引擎看的</span></span><br><span class="line"><span class="label">author:</span> 杨卿华 <span class="preprocessor">#作者</span></span><br><span class="line"><span class="label">email:</span> qhyang.bit@gmail.com <span class="preprocessor">#电子邮箱</span></span><br><span class="line"><span class="label">language:</span> <span class="built_in">zh</span>-CN <span class="preprocessor">#语言</span></span><br><span class="line"><span class="preprocessor"># URL #链接格式</span></span><br><span class="line"><span class="label">url:</span> http://yangqinghua.com <span class="preprocessor">#网址</span></span><br><span class="line"><span class="label">root:</span> / <span class="preprocessor">#根目录</span></span><br><span class="line"><span class="label">permalink:</span> :year/:month/:day/:title/ <span class="preprocessor">#文章的链接格式</span></span><br><span class="line"><span class="label">tag_dir:</span> tags <span class="preprocessor">#标签目录</span></span><br><span class="line"><span class="label">archive_dir:</span> archives <span class="preprocessor">#存档目录</span></span><br><span class="line"><span class="label">category_dir:</span> categories <span class="preprocessor">#分类目录</span></span><br><span class="line"><span class="label">code_dir:</span> downloads/code</span><br><span class="line"><span class="label">permalink_defaults:</span></span><br><span class="line"><span class="preprocessor"># Directory #目录</span></span><br><span class="line"><span class="label">source_dir:</span> source <span class="preprocessor">#源文件目录</span></span><br><span class="line"><span class="label">public_dir:</span> public <span class="preprocessor">#生成的网页文件目录</span></span><br><span class="line"><span class="preprocessor"># Writing #写作</span></span><br><span class="line"><span class="label">new_post_name:</span> :title.md <span class="preprocessor">#新文章标题</span></span><br><span class="line"><span class="label">default_layout:</span> post <span class="preprocessor">#默认的模板，包括 post、page、photo、draft（文章、页面、照片、草稿）</span></span><br><span class="line"><span class="label">titlecase:</span> false <span class="preprocessor">#标题转换成大写</span></span><br><span class="line"><span class="label">external_link:</span> true <span class="preprocessor">#在新选项卡中打开连接</span></span><br><span class="line"><span class="label">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="label">render_drafts:</span> false</span><br><span class="line"><span class="label">post_asset_folder:</span> false</span><br><span class="line"><span class="label">relative_link:</span> false</span><br><span class="line"><span class="label">highlight:</span> <span class="preprocessor">#语法高亮</span></span><br><span class="line">  enable: true <span class="preprocessor">#是否启用</span></span><br><span class="line">  line_number: true <span class="preprocessor">#显示行号</span></span><br><span class="line">  tab_replace:</span><br><span class="line"><span class="preprocessor"># Category &amp; Tag #分类和标签</span></span><br><span class="line"><span class="label">default_category:</span> uncategorized <span class="preprocessor">#默认分类</span></span><br><span class="line"><span class="label">category_map:</span></span><br><span class="line"><span class="label">tag_map:</span></span><br><span class="line"><span class="preprocessor"># Archives</span></span><br><span class="line"><span class="number">2</span>: 开启分页</span><br><span class="line"><span class="number">1</span>: 禁用分页</span><br><span class="line"><span class="number">0</span>: 全部禁用</span><br><span class="line"><span class="label">archive:</span> <span class="number">2</span></span><br><span class="line"><span class="label">category:</span> <span class="number">2</span></span><br><span class="line"><span class="label">tag:</span> <span class="number">2</span></span><br><span class="line"><span class="preprocessor"># Server #本地服务器</span></span><br><span class="line"><span class="label">port:</span> <span class="number">4000</span> <span class="preprocessor">#端口号</span></span><br><span class="line"><span class="label">server_ip:</span> localhost <span class="preprocessor">#IP 地址</span></span><br><span class="line"><span class="label">logger:</span> false</span><br><span class="line"><span class="label">logger_format:</span> dev</span><br><span class="line"><span class="preprocessor"># Date / Time format #日期时间格式</span></span><br><span class="line"><span class="label">date_format:</span> YYYY-MM-DD <span class="preprocessor">#参考http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line"><span class="label">time_format:</span> H:mm:ss</span><br><span class="line"><span class="preprocessor"># Pagination #分页</span></span><br><span class="line"><span class="label">per_page:</span> <span class="number">10</span> <span class="preprocessor">#每页文章数，设置成 0 禁用分页</span></span><br><span class="line"><span class="label">pagination_dir:</span> page</span><br><span class="line"><span class="preprocessor"># Disqus #Disqus评论，替换为多说</span></span><br><span class="line"><span class="label">disqus_shortname:</span></span><br><span class="line"><span class="preprocessor"># Extensions #拓展插件</span></span><br><span class="line"><span class="label">theme:</span> jacman <span class="preprocessor">#主题</span></span><br><span class="line"><span class="label">exclude_generator:</span></span><br><span class="line"><span class="label">plugins:</span> <span class="preprocessor">#插件，例如生成 RSS 和站点地图的</span></span><br><span class="line">- hexo-generator-feed</span><br><span class="line">- hexo-generator-sitemap</span><br><span class="line"><span class="preprocessor"># Deployment #部署，改成用户名</span></span><br><span class="line"><span class="label">deploy:</span></span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:username/username.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<h2 id="常用命令使用">常用命令使用</h2><p>常用命令<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hexo help <span class="preprocessor">#查看帮助</span></span><br><span class="line">hexo init <span class="preprocessor">#初始化一个目录</span></span><br><span class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span> <span class="preprocessor">#新建文章</span></span><br><span class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span> <span class="preprocessor">#新建页面</span></span><br><span class="line">hexo generate <span class="preprocessor">#生成网页，可以在 public 目录查看整个网站的文件</span></span><br><span class="line">hexo <span class="keyword">server</span> <span class="preprocessor">#本地预览，'Ctrl+C'关闭</span></span><br><span class="line">hexo deploy <span class="preprocessor">#部署.deploy目录</span></span><br><span class="line">hexo clean <span class="preprocessor">#清除缓存，强烈建议每次执行命令前先清理缓存，每次部署前先删除 .deploy 文件夹</span></span><br></pre></td></tr></table></figure></p>
+<p>简写<br><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="variable">n =</span>= hexo new</span><br><span class="line">hexo <span class="variable">g =</span>= hexo generate</span><br><span class="line">hexo <span class="variable">s =</span>= hexo server</span><br><span class="line">hexo <span class="variable">d =</span>= hexo deploy</span><br></pre></td></tr></table></figure></p>
+<h2 id="编辑文章">编辑文章</h2><p>新建文章，在根目录下<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">"标题"</span></span><br></pre></td></tr></table></figure></p>
+<p>在 _posts 目录下会生成文件<code>标题.md</code><br><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">title: 标题</span><br><span class="line">date: 2014-11-11 11:11:11</span><br><span class="line">tags:</span><br><span class="line">-<span class="ruby"> 标签<span class="number">1</span></span><br><span class="line"></span>-<span class="ruby"> 标签<span class="number">2</span></span><br><span class="line"></span>-<span class="ruby"> 标签<span class="number">3</span></span><br><span class="line"></span>categories: [分类1,分类2,分类3]</span><br><span class="line">-<span class="ruby">--</span><br><span class="line"></span>正文</span><br></pre></td></tr></table></figure></p>
+<p>使用Markdown语法书写,这里有<a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="external">在线编辑器</a>,还有<a href="http://wowubuntu.com/markdown/#precode" target="_blank" rel="external">Markdown语法</a>,熟悉一些。编辑完后保存，预览<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">server</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="发布">发布</h2><p>以发布到 Github 为例<br>编辑全局配置文件 _config.yml 中的 deploy 部分。<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repository</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:username/username.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></p>
+<p>部署<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">g</span></span><br><span class="line">hexo <span class="literal">d</span></span><br></pre></td></tr></table></figure></p>
+<p>以下提示说明部署成功<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr_selector">[info]</span> <span class="tag">Deploy</span> <span class="rule"><span class="attribute">done</span>:<span class="value"> github</span></span></span><br></pre></td></tr></table></figure></p>
+<p>访问路径：http：//username.github.io</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="目录结构">目录结构</h2><p>打开工作区文件加可以看到：</p>
+<p><p><br>├── deploy       #需要部署的文件<br>├── node_modules  #Hexo插件<br>├── public        #生成的静态网页文件<br>├── scaffolds     #模板<br>├── source        #博客正文和其他源文件，404、favicon、CNAME 都应该放在这里<br>├── _drafts   #草稿<br>├──  _posts    #文章<br>├── themes        #主题<br>├── _config.yml   #全局配置文件<br>└── package.json<br></p><br>]]>
+    
+    </summary>
+    
+      <category term="blog" scheme="http://yangqinghua.com/tags/blog/"/>
+    
+      <category term="hexo" scheme="http://yangqinghua.com/tags/hexo/"/>
+    
+      <category term="Hexo" scheme="http://yangqinghua.com/categories/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hexo+github搭建个人博客——安装]]></title>
+    <link href="http://yangqinghua.com/2015/07/19/Hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85/"/>
+    <id>http://yangqinghua.com/2015/07/19/Hexo+github搭建个人博客——安装/</id>
+    <published>2015-07-19T07:49:05.000Z</published>
+    <updated>2015-07-19T16:00:37.000Z</updated>
+    <content type="html"><![CDATA[<p>hexo是由Node.js驱动的一款快速、简单且功能强大的博客框架。<br><img src="/img/hexo.png" alt="hexo"><br>特性</p>
+<blockquote>
+<p>风一般的速度</p>
+</blockquote>
+<p>  Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。</p>
+<blockquote>
+<p>流畅的撰写</p>
+</blockquote>
+<p>  支持GitHub Flavored Markdown和所有Octopress的插件。</p>
+<blockquote>
+<p>扩展性</p>
+</blockquote>
+<p>  Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.</p>
+<a id="more"></a>
+<h2 id="Node-js">Node.js</h2><p>前提是必须先安装 Node.js和 npm，这篇<a href="http://blog.fens.me/nodejs-enviroment/" target="_blank" rel="external">文章</a>可以看一下<br><code><br>$sudo apt-get install nodejs<br>$sudo apt-get install npm<br></code><br>仅需一步就安装完毕，很简单吧？<br></p>
+<h2 id="Hexo">Hexo</h2><p>安装</p>
+<pre><code>
+npm install -g hexo
+</code></pre>
+查看 Node 版本
+<pre><code>
+node -v
+</code></pre>
+查看 Hexo 版本,检查是否安装正确
+<pre><code>
+hexo version
+</code></pre>
+先进目录再初始化项目
+<pre><code>
+cd hexo（你的工作区名）
+hexo init
+</code></pre>
+进入目录
+<pre><code>
+cd hexo-lcx
+</code></pre>
+安装依赖包
+<pre><code>
+npm install
+</code></pre>
+
+<p>以后所有的命令都在该目录下进行<br>启动服务</p>
+<p><pre><code><br>hexo server<br></code></pre><br>用浏览器打开 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 或者 <a href="http://0.0.0.1:4000/" target="_blank" rel="external">http://0.0.0.1:4000/</a> 就能看到网页了<br>按Ctrl+C停止本地预览服务</p>
+<h2 id="Git">Git</h2><p>安装Git的客户端</p>
+<p><pre><code><br>$ sudo apt-get install git-core<br></code></pre></p>
+<h2 id="Github">Github</h2><ol>
+<li>先注册一个『GitHub』帐号，已有的默认默认请忽略</li>
+<li>建立与你用户名对应的仓库，仓库名必须为『your_user_name.github.io』</li>
+<li>添加SSH公钥到『Account settings -&gt; SSH Keys -&gt; Add SSH Key』<br>详细的可以看一些这篇<a href="http://www.aips.me/github-pages-build-blog.html" target="_blank" rel="external">文章</a></li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>hexo是由Node.js驱动的一款快速、简单且功能强大的博客框架。<br><img src="/img/hexo.png" alt="hexo"><br>特性</p>
+<blockquote>
+<p>风一般的速度</p>
+</blockquote>
+<p>  Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。</p>
+<blockquote>
+<p>流畅的撰写</p>
+</blockquote>
+<p>  支持GitHub Flavored Markdown和所有Octopress的插件。</p>
+<blockquote>
+<p>扩展性</p>
+</blockquote>
+<p>  Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.</p>]]>
+    
+    </summary>
+    
+      <category term="blog" scheme="http://yangqinghua.com/tags/blog/"/>
+    
+      <category term="hexo" scheme="http://yangqinghua.com/tags/hexo/"/>
+    
+      <category term="Hexo" scheme="http://yangqinghua.com/categories/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[搭建独立博客]]></title>
+    <link href="http://yangqinghua.com/2015/07/18/%E6%90%AD%E5%BB%BA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yangqinghua.com/2015/07/18/搭建独立博客/</id>
+    <published>2015-07-18T07:49:05.000Z</published>
+    <updated>2015-07-19T07:54:48.000Z</updated>
+    <content type="html"><![CDATA[<p>历时三天，第一次在万网申请域名，第一次使用<a href="http://www.github.com" target="_blank" rel="external">github</a>来管理源码，第一次独立安装ubuntu，在一点点的摸索中，各种菜鸟问题层出不穷。。。但是，在baidu大神的庇护在，经过千难万险，我的个人独立博客终于建立起来了！</p>
+<p>初来乍到<a href="http://www.bit.edu.cn" target="_blank" rel="external">bit</a>，很幸运的进入了一个很有优秀的团队，见识到了真正的大神。同时产生了无形的压力，自己实在是太弱了，好在实验室的学长们都很有耐心，每次问一些很low的问题，都能细致的帮我解答。</p>
+<a id="more"></a>
+<h2 id="为什么要一个独立博客">为什么要一个独立博客</h2><p>刚来到实验室，在多人的推荐下，我第一次看到了<a href="http://wuchong.me" target="_blank" rel="external">wuchong</a>学长的博客，真是太酷炫的！里面高大上的技术分享真是把我震撼到了，于是萌生了自己做一个独立博客的想法。<br>之所以要一个独立博客，我觉得有以下几个原因在驱动我吧。<br>     <strong>1.独立，自由，简洁。</strong><br>     <strong>2.够酷炫。能有一个专属自己的域名。</strong><br>     <strong>3.成长的记录。记录下在学习过程中遇到的问题和其解决方案，方便今后查看。</strong></p>
+<h2 id="对博客未来的打算">对博客未来的打算</h2><p>艰苦奋战建好博客后，真的很有成就感，以后我也可以写一个菜鸟建站教程了。也可以以此为动力，驱动自己可以去学习一些技术，希望能坚持。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>历时三天，第一次在万网申请域名，第一次使用<a href="http://www.github.com">github</a>来管理源码，第一次独立安装ubuntu，在一点点的摸索中，各种菜鸟问题层出不穷。。。但是，在baidu大神的庇护在，经过千难万险，我的个人独立博客终于建立起来了！</p>
+<p>初来乍到<a href="http://www.bit.edu.cn">bit</a>，很幸运的进入了一个很有优秀的团队，见识到了真正的大神。同时产生了无形的压力，自己实在是太弱了，好在实验室的学长们都很有耐心，每次问一些很low的问题，都能细致的帮我解答。</p>]]>
+    
+    </summary>
+    
+      <category term="生活" scheme="http://yangqinghua.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="随笔生活" scheme="http://yangqinghua.com/categories/%E9%9A%8F%E7%AC%94%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://yangqinghua.com/2015/07/17/hello-world/"/>
+    <id>http://yangqinghua.com/2015/07/17/hello-world/</id>
+    <published>2015-07-17T07:49:05.000Z</published>
+    <updated>2015-07-19T07:54:30.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<a id="more"></a>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">$ hexo server</span><br><span class="line">$ hexo server</span><br><span class="line">$ hexo server</span><br><span class="line">$ hexo server</span><br><span class="line">$ hexo server</span><br><span class="line">$ hexo server</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>]]>
+    
+    </summary>
+    
+      <category term="生活" scheme="http://yangqinghua.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="随笔生活" scheme="http://yangqinghua.com/categories/%E9%9A%8F%E7%AC%94%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+</feed>
