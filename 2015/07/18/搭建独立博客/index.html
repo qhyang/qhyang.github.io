@@ -1,0 +1,471 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>搭建独立博客 | tsinghua</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="yangqinghua">
+    
+
+    
+    <meta name="description" content="历时三天，第一次在万网申请域名，第一次使用github来管理源码，第一次独立安装ubuntu，在一点点的摸索中，各种菜鸟问题层出不穷。。。但是，在baidu大神的庇护在，经过千难万险，我的个人独立博客终于建立起来了！
+初来乍到bit，很幸运的进入了一个很有优秀的团队，见识到了真正的大神。同时产生了无形的压力，自己实在是太弱了，好在实验室的学长们都很有耐心，每次问一些很low的问题，都能细致的帮我解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建独立博客">
+<meta property="og:url" content="http://yangqinghua.com/2015/07/18/搭建独立博客/index.html">
+<meta property="og:site_name" content="tsinghua">
+<meta property="og:description" content="历时三天，第一次在万网申请域名，第一次使用github来管理源码，第一次独立安装ubuntu，在一点点的摸索中，各种菜鸟问题层出不穷。。。但是，在baidu大神的庇护在，经过千难万险，我的个人独立博客终于建立起来了！
+初来乍到bit，很幸运的进入了一个很有优秀的团队，见识到了真正的大神。同时产生了无形的压力，自己实在是太弱了，好在实验室的学长们都很有耐心，每次问一些很low的问题，都能细致的帮我解">
+<meta property="og:updated_time" content="2015-07-19T07:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搭建独立博客">
+<meta name="twitter:description" content="历时三天，第一次在万网申请域名，第一次使用github来管理源码，第一次独立安装ubuntu，在一点点的摸索中，各种菜鸟问题层出不穷。。。但是，在baidu大神的庇护在，经过千难万险，我的个人独立博客终于建立起来了！
+初来乍到bit，很幸运的进入了一个很有优秀的团队，见识到了真正的大神。同时产生了无形的压力，自己实在是太弱了，好在实验室的学长们都很有耐心，每次问一些很low的问题，都能细致的帮我解">
+
+    
+    <link rel="alternative" href="/atom.xml" title="tsinghua" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/icon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="tsinghua" title="tsinghua"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="tsinghua">tsinghua</a></h1>
+				<h2 class="blog-motto">梦想不是浮躁，而是沉淀和积累。</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+						<form class="search" action="http://zhannei.baidu.com/cse/search" target="_blank">
+							<label>Search</label>
+						<input name="s" type="hidden" value= 5007141360455378428 ><input type="text" name="q" size="30" placeholder="搜索"><br>
+						</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/07/18/搭建独立博客/" title="搭建独立博客" itemprop="url">搭建独立博客</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="yangqinghua" target="_blank" itemprop="author">yangqinghua</a>
+		
+  <p class="article-time">
+    <time datetime="2015-07-18T07:49:05.000Z" itemprop="datePublished"> 发表于 2015-07-18</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要一个独立博客"><span class="toc-number">1.</span> <span class="toc-text">为什么要一个独立博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客未来的打算"><span class="toc-number">2.</span> <span class="toc-text">对博客未来的打算</span></a></li></ol>
+		
+		</div>
+		
+		<p>历时三天，第一次在万网申请域名，第一次使用<a href="http://www.github.com" target="_blank" rel="external">github</a>来管理源码，第一次独立安装ubuntu，在一点点的摸索中，各种菜鸟问题层出不穷。。。但是，在baidu大神的庇护在，经过千难万险，我的个人独立博客终于建立起来了！</p>
+<p>初来乍到<a href="http://www.bit.edu.cn" target="_blank" rel="external">bit</a>，很幸运的进入了一个很有优秀的团队，见识到了真正的大神。同时产生了无形的压力，自己实在是太弱了，好在实验室的学长们都很有耐心，每次问一些很low的问题，都能细致的帮我解答。</p>
+<a id="more"></a>
+<h2 id="为什么要一个独立博客">为什么要一个独立博客</h2><p>刚来到实验室，在多人的推荐下，我第一次看到了<a href="http://wuchong.me" target="_blank" rel="external">wuchong</a>学长的博客，真是太酷炫的！里面高大上的技术分享真是把我震撼到了，于是萌生了自己做一个独立博客的想法。<br>之所以要一个独立博客，我觉得有以下几个原因在驱动我吧。<br>     <strong>1.独立，自由，简洁。</strong><br>     <strong>2.够酷炫。能有一个专属自己的域名。</strong><br>     <strong>3.成长的记录。记录下在学习过程中遇到的问题和其解决方案，方便今后查看。</strong></p>
+<h2 id="对博客未来的打算">对博客未来的打算</h2><p>艰苦奋战建好博客后，真的很有成就感，以后我也可以写一个菜鸟建站教程了。也可以以此为动力，驱动自己可以去学习一些技术，希望能坚持。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/随笔生活/">随笔生活</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/生活/">生活</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yangqinghua.com/2015/07/18/搭建独立博客/" data-title="搭建独立博客 | tsinghua" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/07/17/hello-world/"  title="Hello World">
+ <strong>下一篇：</strong><br/> 
+ <span>Hello World
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/07/18/搭建独立博客/" data-title="搭建独立博客" data-url="http://yangqinghua.com/2015/07/18/搭建独立博客/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要一个独立博客"><span class="toc-number">1.</span> <span class="toc-text">为什么要一个独立博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客未来的打算"><span class="toc-number">2.</span> <span class="toc-text">对博客未来的打算</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/随笔生活/" title="随笔生活">随笔生活<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/生活/" title="生活">生活<sup>2</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2651697902&verifier=a47fdc6f&dpc=1"></iframe>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello,I&#39;m yangqinghua. For now I&#39;m a graduate student in Beijing. <br/>
+			I want to use this blog to record my life</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2651697902 for http://weibo.com/2651697902" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="yangqinghua">yangqinghua</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"tsinghua"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fcb0b1d4dd32c069cb98cb4dbbb157bae' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
