@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   
-  <title><![CDATA[Tsinghua'Blog]]></title>
+  <title><![CDATA[Tsinghua's Blog]]></title>
   <subtitle><![CDATA[梦想不是浮躁，而是沉淀和积累。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yangqinghua.com//"/>
