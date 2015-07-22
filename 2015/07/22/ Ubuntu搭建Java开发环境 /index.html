@@ -4,60 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hexo+github搭建个人博客——安装 | Tsinghua&#39;s Blog</title>
+    <title>Ubuntu搭建Java开发环境 | Tsinghua&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yangqinghua">
     
 
     
-    <meta name="description" content="hexo是由Node.js驱动的一款快速、简单且功能强大的博客框架。特性
-
-风一般的速度
-
-  Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。
-
-流畅的撰写
-
-  支持GitHub Flavored Markdown和所有Octopress的插件。
-
-扩展性
-
-  Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.">
+    <meta name="description" content="安装JDK今天尝试在ubuntu14.04安装jdk-7u80-linux-x64.tar.gz，并配置环境变量。
+第一步 下载我下载的是jdk-7u80-linux-x64.tar.gz，下载地址是：http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo+github搭建个人博客——安装">
-<meta property="og:url" content="http://yangqinghua.com/2015/07/19/Hexo+github搭建个人博客——安装/index.html">
+<meta property="og:title" content="Ubuntu搭建Java开发环境">
+<meta property="og:url" content="http://yangqinghua.com/2015/07/22/ Ubuntu搭建Java开发环境 /index.html">
 <meta property="og:site_name" content="Tsinghua's Blog">
-<meta property="og:description" content="hexo是由Node.js驱动的一款快速、简单且功能强大的博客框架。特性
-
-风一般的速度
-
-  Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。
-
-流畅的撰写
-
-  支持GitHub Flavored Markdown和所有Octopress的插件。
-
-扩展性
-
-  Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.">
-<meta property="og:image" content="http://yangqinghua.com/img/hexo.png">
-<meta property="og:updated_time" content="2015-07-19T16:00:37.000Z">
+<meta property="og:description" content="安装JDK今天尝试在ubuntu14.04安装jdk-7u80-linux-x64.tar.gz，并配置环境变量。
+第一步 下载我下载的是jdk-7u80-linux-x64.tar.gz，下载地址是：http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html">
+<meta property="og:updated_time" content="2015-07-22T03:41:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo+github搭建个人博客——安装">
-<meta name="twitter:description" content="hexo是由Node.js驱动的一款快速、简单且功能强大的博客框架。特性
-
-风一般的速度
-
-  Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。
-
-流畅的撰写
-
-  支持GitHub Flavored Markdown和所有Octopress的插件。
-
-扩展性
-
-  Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.">
+<meta name="twitter:title" content="Ubuntu搭建Java开发环境">
+<meta name="twitter:description" content="安装JDK今天尝试在ubuntu14.04安装jdk-7u80-linux-x64.tar.gz，并配置环境变量。
+第一步 下载我下载的是jdk-7u80-linux-x64.tar.gz，下载地址是：http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html">
 
     
     <link rel="alternative" href="atom.xml" title="Tsinghua&#39;s Blog" type="application/atom+xml">
@@ -116,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/19/Hexo+github搭建个人博客——安装/" title="Hexo+github搭建个人博客——安装" itemprop="url">Hexo+github搭建个人博客——安装</a>
+      <a href="/2015/07/22/ Ubuntu搭建Java开发环境 /" title="Ubuntu搭建Java开发环境" itemprop="url">Ubuntu搭建Java开发环境</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yangqinghua" target="_blank" itemprop="author">yangqinghua</a>
 		
   <p class="article-time">
-    <time datetime="2015-07-19T07:49:05.000Z" itemprop="datePublished"> 发表于 2015-07-19</time>
+    <time datetime="2015-07-22T03:09:05.000Z" itemprop="datePublished"> 发表于 2015-07-22</time>
     
   </p>
 </header>
@@ -132,60 +98,19 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js"><span class="toc-number">1.</span> <span class="toc-text">Node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo"><span class="toc-number">2.</span> <span class="toc-text">Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git"><span class="toc-number">3.</span> <span class="toc-text">Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Github"><span class="toc-number">4.</span> <span class="toc-text">Github</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装JDK"><span class="toc-number">1.</span> <span class="toc-text">安装JDK</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步_下载"><span class="toc-number">1.1.</span> <span class="toc-text">第一步 下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二步_解压"><span class="toc-number">1.2.</span> <span class="toc-text">第二步 解压</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三步_修改环境变量"><span class="toc-number">1.3.</span> <span class="toc-text">第三步 修改环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四步_检测"><span class="toc-number">1.4.</span> <span class="toc-text">第四步 检测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装eclipse"><span class="toc-number">2.</span> <span class="toc-text">安装eclipse</span></a></li></ol>
 		
 		</div>
 		
-		<p>hexo是由Node.js驱动的一款快速、简单且功能强大的博客框架。<br><img src="/img/hexo.png" alt="hexo"><br>特性</p>
-<blockquote>
-<p>风一般的速度</p>
-</blockquote>
-<p>  Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。</p>
-<blockquote>
-<p>流畅的撰写</p>
-</blockquote>
-<p>  支持GitHub Flavored Markdown和所有Octopress的插件。</p>
-<blockquote>
-<p>扩展性</p>
-</blockquote>
-<p>  Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.</p>
-<a id="more"></a>
-<h2 id="Node-js">Node.js</h2><p>前提是必须先安装 Node.js和 npm，这篇<a href="http://blog.fens.me/nodejs-enviroment/" target="_blank" rel="external">文章</a>可以看一下<br><code><br>$sudo apt-get install nodejs<br>$sudo apt-get install npm<br></code><br>仅需一步就安装完毕，很简单吧？<br></p>
-<h2 id="Hexo">Hexo</h2><p>安装</p>
-<pre><code>
-npm install -g hexo
-</code></pre>
-查看 Node 版本
-<pre><code>
-node -v
-</code></pre>
-查看 Hexo 版本,检查是否安装正确
-<pre><code>
-hexo version
-</code></pre>
-先进目录再初始化项目
-<pre><code>
-cd hexo（你的工作区名）
-hexo init
-</code></pre>
-进入目录
-<pre><code>
-cd hexo-lcx
-</code></pre>
-安装依赖包
-<pre><code>
-npm install
-</code></pre>
-
-<p>以后所有的命令都在该目录下进行<br>启动服务</p>
-<p><pre><code><br>hexo server<br></code></pre><br>用浏览器打开 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 或者 <a href="http://0.0.0.1:4000/" target="_blank" rel="external">http://0.0.0.1:4000/</a> 就能看到网页了<br>按Ctrl+C停止本地预览服务</p>
-<h2 id="Git">Git</h2><p>安装Git的客户端</p>
-<p><pre><code><br>$ sudo apt-get install git-core<br></code></pre></p>
-<h2 id="Github">Github</h2><ol>
-<li>先注册一个『GitHub』帐号，已有的默认默认请忽略</li>
-<li>建立与你用户名对应的仓库，仓库名必须为『your_user_name.github.io』</li>
-<li>添加SSH公钥到『Account settings -&gt; SSH Keys -&gt; Add SSH Key』<br>详细的可以看一些这篇<a href="http://www.aips.me/github-pages-build-blog.html" target="_blank" rel="external">文章</a></li>
-</ol>
+		<h2 id="安装JDK">安装JDK</h2><p>今天尝试在ubuntu14.04安装jdk-7u80-linux-x64.tar.gz，并配置环境变量。</p>
+<h3 id="第一步_下载">第一步 下载</h3><p>我下载的是jdk-7u80-linux-x64.tar.gz，下载地址是：<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html</a><br><a id="more"></a></p>
+<h3 id="第二步_解压">第二步 解压</h3><p>下到你的下载目录<br><code>cd 下载</code><br>然后执行<br><code>sudo tar zxvf jdk-7u4-linux-i586.tar.gz</code><br>这是解压到当前目录，因为下一步需要配置java环境变量，最后不要出现中文目录，所以现在将解压好的jdk.1.7.0_80目录移到 /home/java目录<br><code>sudo mv jdk1.7.0_80 /home/java</code></p>
+<h3 id="第三步_修改环境变量">第三步 修改环境变量</h3><p>开启root权限，执行<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">vim</span> ~/.bashrc</span><br></pre></td></tr></table></figure></p>
+<p>添加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/home/java/jdk1.<span class="number">7.0</span>_80  </span><br><span class="line"><span class="built_in">export</span> JRE_HOME=<span class="variable">$&#123;JAVA_HOME&#125;</span>/jre  </span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$&#123;JAVA_HOME&#125;</span>/lib:<span class="variable">$&#123;JRE_HOME&#125;</span>/lib  </span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;JAVA_HOME&#125;</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure></p>
+<p>保存退出，输入以下命令使之立即生效。<br><code>source ~/.bashrc</code><br>把设置环境变量的命令写进scripts中，要用source 命令,当通过文件（命令列）设置环境变量时。</p>
+<h3 id="第四步_检测">第四步 检测</h3><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~$ java -<span class="built_in">version</span>  </span><br><span class="line">java <span class="built_in">version</span> <span class="string">"1.7.0_80"</span></span><br><span class="line">Java<span class="params">(TM)</span> SE Runtime Environment <span class="params">(build <span class="number">1.7</span>.<span class="number">0</span>_80-b15)</span></span><br><span class="line">Java HotSpot<span class="params">(TM)</span> <span class="number">64</span>-Bit Server VM <span class="params">(build <span class="number">24.80</span>-b11, mixed mode)</span></span><br></pre></td></tr></table></figure>
+<p>完成JDK的安装和配置</p>
+<h2 id="安装eclipse">安装eclipse</h2><p>一样的步骤去<a href="http://www.eclipse.org/downloads/" target="_blank" rel="external">官网</a>下载解压<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">tsinghua@tsinghua-Lenovo-Product:~$ cd 下载/eclipse</span><br><span class="line">tsinghua@tsinghua-Lenovo-Product:~/下载/eclipse$ ls -<span class="number">1</span></span><br><span class="line">artifacts<span class="class">.xml</span></span><br><span class="line">configuration</span><br><span class="line">dropins</span><br><span class="line">eclipse</span><br><span class="line">eclipse<span class="class">.ini</span></span><br><span class="line">features</span><br><span class="line"><span class="attribute">icon</span><span class="class">.xpm</span></span><br><span class="line">p2</span><br><span class="line">plugins</span><br><span class="line">readme</span><br><span class="line">tsinghua@tsinghua-Lenovo-Product:~/下载/eclipse$ ./eclipse</span><br><span class="line">org<span class="class">.eclipse</span><span class="class">.m2e</span><span class="class">.logback</span><span class="class">.configuration</span>: The org<span class="class">.eclipse</span><span class="class">.m2e</span><span class="class">.logback</span><span class="class">.configuration</span> bundle was activated before the state location was initialized.  Will retry after the state location is initialized.</span><br></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -193,13 +118,13 @@ npm install
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  <a class="article-category-link" href="/categories/Linux/">Linux</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/blog/">blog</a><a href="/tags/hexo/">hexo</a>
+  <span></span> <a href="/tags/java/">java</a><a href="/tags/linux基础/">linux基础</a>
   </div>
 
 </div>
@@ -208,7 +133,7 @@ npm install
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yangqinghua.com/2015/07/19/Hexo+github搭建个人博客——安装/" data-title="Hexo+github搭建个人博客——安装 | Tsinghua&#39;s Blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yangqinghua.com/2015/07/22/ Ubuntu搭建Java开发环境 /" data-title="Ubuntu搭建Java开发环境 | Tsinghua&#39;s Blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -221,19 +146,11 @@ npm install
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/07/19/Hexo+github搭建个人博客——使用/" title="Hexo+github搭建个人博客——使用">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Hexo+github搭建个人博客——使用</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/07/18/搭建独立博客/"  title="搭建独立博客">
+<a href="/2015/07/20/Hexo+github搭建个人博客——优化/"  title="Hexo+github搭建个人博客——优化">
  <strong>下一篇：</strong><br/> 
- <span>搭建独立博客
+ <span>Hexo+github搭建个人博客——优化
 </span>
 </a>
 </div>
@@ -242,7 +159,7 @@ npm install
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/07/19/Hexo+github搭建个人博客——安装/" data-title="Hexo+github搭建个人博客——安装" data-url="http://yangqinghua.com/2015/07/19/Hexo+github搭建个人博客——安装/"></div>
+	<div class="ds-thread" data-thread-key="2015/07/22/ Ubuntu搭建Java开发环境 /" data-title="Ubuntu搭建Java开发环境" data-url="http://yangqinghua.com/2015/07/22/ Ubuntu搭建Java开发环境 /"></div>
 </section>
 
 
@@ -252,7 +169,7 @@ npm install
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js"><span class="toc-number">1.</span> <span class="toc-text">Node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo"><span class="toc-number">2.</span> <span class="toc-text">Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git"><span class="toc-number">3.</span> <span class="toc-text">Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Github"><span class="toc-number">4.</span> <span class="toc-text">Github</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装JDK"><span class="toc-number">1.</span> <span class="toc-text">安装JDK</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步_下载"><span class="toc-number">1.1.</span> <span class="toc-text">第一步 下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二步_解压"><span class="toc-number">1.2.</span> <span class="toc-text">第二步 解压</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三步_修改环境变量"><span class="toc-number">1.3.</span> <span class="toc-text">第三步 修改环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四步_检测"><span class="toc-number">1.4.</span> <span class="toc-text">第四步 检测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装eclipse"><span class="toc-number">2.</span> <span class="toc-text">安装eclipse</span></a></li></ol>
  
   </div>
 

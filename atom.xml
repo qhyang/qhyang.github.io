@@ -5,7 +5,7 @@
   <subtitle><![CDATA[梦想不是浮躁，而是沉淀和积累。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yangqinghua.com//"/>
-  <updated>2015-07-19T19:01:16.000Z</updated>
+  <updated>2015-07-22T03:41:54.000Z</updated>
   <id>http://yangqinghua.com//</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Ubuntu搭建Java开发环境]]></title>
+    <link href="http://yangqinghua.com/2015/07/22/%20Ubuntu%E6%90%AD%E5%BB%BAJava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%20/"/>
+    <id>http://yangqinghua.com/2015/07/22/ Ubuntu搭建Java开发环境 /</id>
+    <published>2015-07-22T03:09:05.000Z</published>
+    <updated>2015-07-22T03:41:54.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="安装JDK">安装JDK</h2><p>今天尝试在ubuntu14.04安装jdk-7u80-linux-x64.tar.gz，并配置环境变量。</p>
+<h3 id="第一步_下载">第一步 下载</h3><p>我下载的是jdk-7u80-linux-x64.tar.gz，下载地址是：<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html</a><br><a id="more"></a></p>
+<h3 id="第二步_解压">第二步 解压</h3><p>下到你的下载目录<br><code>cd 下载</code><br>然后执行<br><code>sudo tar zxvf jdk-7u4-linux-i586.tar.gz</code><br>这是解压到当前目录，因为下一步需要配置java环境变量，最后不要出现中文目录，所以现在将解压好的jdk.1.7.0_80目录移到 /home/java目录<br><code>sudo mv jdk1.7.0_80 /home/java</code></p>
+<h3 id="第三步_修改环境变量">第三步 修改环境变量</h3><p>开启root权限，执行<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">vim</span> ~/.bashrc</span><br></pre></td></tr></table></figure></p>
+<p>添加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/home/java/jdk1.<span class="number">7.0</span>_80  </span><br><span class="line"><span class="built_in">export</span> JRE_HOME=<span class="variable">$&#123;JAVA_HOME&#125;</span>/jre  </span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$&#123;JAVA_HOME&#125;</span>/lib:<span class="variable">$&#123;JRE_HOME&#125;</span>/lib  </span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;JAVA_HOME&#125;</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure></p>
+<p>保存退出，输入以下命令使之立即生效。<br><code>source ~/.bashrc</code><br>把设置环境变量的命令写进scripts中，要用source 命令,当通过文件（命令列）设置环境变量时。</p>
+<h3 id="第四步_检测">第四步 检测</h3><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~$ java -<span class="built_in">version</span>  </span><br><span class="line">java <span class="built_in">version</span> <span class="string">"1.7.0_80"</span></span><br><span class="line">Java<span class="params">(TM)</span> SE Runtime Environment <span class="params">(build <span class="number">1.7</span>.<span class="number">0</span>_80-b15)</span></span><br><span class="line">Java HotSpot<span class="params">(TM)</span> <span class="number">64</span>-Bit Server VM <span class="params">(build <span class="number">24.80</span>-b11, mixed mode)</span></span><br></pre></td></tr></table></figure>
+<p>完成JDK的安装和配置</p>
+<h2 id="安装eclipse">安装eclipse</h2><p>一样的步骤去<a href="http://www.eclipse.org/downloads/" target="_blank" rel="external">官网</a>下载解压<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">tsinghua@tsinghua-Lenovo-Product:~$ cd 下载/eclipse</span><br><span class="line">tsinghua@tsinghua-Lenovo-Product:~/下载/eclipse$ ls -<span class="number">1</span></span><br><span class="line">artifacts<span class="class">.xml</span></span><br><span class="line">configuration</span><br><span class="line">dropins</span><br><span class="line">eclipse</span><br><span class="line">eclipse<span class="class">.ini</span></span><br><span class="line">features</span><br><span class="line"><span class="attribute">icon</span><span class="class">.xpm</span></span><br><span class="line">p2</span><br><span class="line">plugins</span><br><span class="line">readme</span><br><span class="line">tsinghua@tsinghua-Lenovo-Product:~/下载/eclipse$ ./eclipse</span><br><span class="line">org<span class="class">.eclipse</span><span class="class">.m2e</span><span class="class">.logback</span><span class="class">.configuration</span>: The org<span class="class">.eclipse</span><span class="class">.m2e</span><span class="class">.logback</span><span class="class">.configuration</span> bundle was activated before the state location was initialized.  Will retry after the state location is initialized.</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="安装JDK">安装JDK</h2><p>今天尝试在ubuntu14.04安装jdk-7u80-linux-x64.tar.gz，并配置环境变量。</p>
+<h3 id="第一步_下载">第一步 下载</h3><p>我下载的是jdk-7u80-linux-x64.tar.gz，下载地址是：<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html">http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html</a><br>]]>
+    
+    </summary>
+    
+      <category term="java" scheme="http://yangqinghua.com/tags/java/"/>
+    
+      <category term="linux基础" scheme="http://yangqinghua.com/tags/linux%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="Linux" scheme="http://yangqinghua.com/categories/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hexo+github搭建个人博客——优化]]></title>
