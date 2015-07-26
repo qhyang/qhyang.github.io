@@ -12,19 +12,19 @@
 
     
     <meta name="description" content="正则表达式是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性的语言来给字符串定义一个规则，凡是符合规则的字符串，我们就认为它“匹配”了，否则，该字符串就是不合法的。
-正则表达式的规则正则表达式的语法规则和常用的正则式网上有很多，以后用到可以查看。下面是Python中正则表达式的一些匹配规则，图片资料来自CSDN">
+正则表达式的规则正则表达式的语法规则和常用的正则式网上有很多相关的资料，以后用到可以查看。下面是Python中正则表达式的一些匹配规则，图片资料来自CSDN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python爬虫:正则表达式">
 <meta property="og:url" content="http://yangqinghua.com/2015/07/26/Python爬虫：正则表达式/index.html">
 <meta property="og:site_name" content="Tsinghua's Blog">
 <meta property="og:description" content="正则表达式是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性的语言来给字符串定义一个规则，凡是符合规则的字符串，我们就认为它“匹配”了，否则，该字符串就是不合法的。
-正则表达式的规则正则表达式的语法规则和常用的正则式网上有很多，以后用到可以查看。下面是Python中正则表达式的一些匹配规则，图片资料来自CSDN">
+正则表达式的规则正则表达式的语法规则和常用的正则式网上有很多相关的资料，以后用到可以查看。下面是Python中正则表达式的一些匹配规则，图片资料来自CSDN">
 <meta property="og:image" content="http://yangqinghua.com/img/zhengze.png">
-<meta property="og:updated_time" content="2015-07-26T04:58:40.000Z">
+<meta property="og:updated_time" content="2015-07-26T05:03:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python爬虫:正则表达式">
 <meta name="twitter:description" content="正则表达式是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性的语言来给字符串定义一个规则，凡是符合规则的字符串，我们就认为它“匹配”了，否则，该字符串就是不合法的。
-正则表达式的规则正则表达式的语法规则和常用的正则式网上有很多，以后用到可以查看。下面是Python中正则表达式的一些匹配规则，图片资料来自CSDN">
+正则表达式的规则正则表达式的语法规则和常用的正则式网上有很多相关的资料，以后用到可以查看。下面是Python中正则表达式的一些匹配规则，图片资料来自CSDN">
 
     
     <link rel="alternative" href="atom.xml" title="Tsinghua&#39;s Blog" type="application/atom+xml">
@@ -104,7 +104,7 @@
 		</div>
 		
 		<p>正则表达式是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性的语言来给字符串定义一个规则，凡是符合规则的字符串，我们就认为它“匹配”了，否则，该字符串就是不合法的。</p>
-<h2 id="正则表达式的规则">正则表达式的规则</h2><p>正则表达式的<a href="http://www.jb51.net/tools/zhengze.html" target="_blank" rel="external">语法规则</a>和<a href="http://www.jb51.net/tools/regex.htm" target="_blank" rel="external">常用的正则式</a>网上有很多，以后用到可以查看。下面是Python中正则表达式的一些匹配规则，图片资料来自CSDN<br><a id="more"></a><br><img src="/img/zhengze.png" alt="zhengze"></p>
+<h2 id="正则表达式的规则">正则表达式的规则</h2><p>正则表达式的<a href="http://www.jb51.net/tools/zhengze.html" target="_blank" rel="external">语法规则</a>和<a href="http://www.jb51.net/tools/regex.htm" target="_blank" rel="external">常用的正则式</a>网上有很多相关的资料，以后用到可以查看。下面是Python中正则表达式的一些匹配规则，图片资料来自CSDN<br><a id="more"></a><br><img src="/img/zhengze.png" alt="zhengze"></p>
 <h3 id="正则表达式相关注解">正则表达式相关注解</h3><p>（1）数量词的贪婪模式与非贪婪模式<br><br> 正则表达式通常用于在文本中查找匹配的字符串。Python里数量词默认是贪婪的（在少数语言里也可能是默认非贪婪），总是尝试匹配尽可能多的字符；非贪婪的则相反，总是尝试匹配尽可能少的字符。例如：正则表达式”ab<em>”如果用于查找”abbbc”，将找到”abbb”。而如果使用非贪婪的数量词”ab</em>?”，将找到”a”。<br></p>
 <p>注：我们一般使用非贪婪模式来提取。</p>
 <p>（2）反斜杠问题<br><br>与大多数编程语言相同，正则表达式里使用”\”作为转义字符，这就可能造成反斜杠困扰。假如你需要匹配文本中的字符”\”，那么使用编程语言表示的正则表达式里将需要4个反斜杠”\\”：前两个和后两个分别用于在编程语言里转义成反斜杠，转换成两个反斜杠后再在正则表达式里转义成一个反斜杠。<br><br>Python里的原生字符串很好地解决了这个问题，这个例子中的正则表达式可以使用r”\”表示。同样，匹配一个数字的”\d”可以写成r”\d”。有了原生字符串，写出来的表达式也更直观。</p>
@@ -221,14 +221,6 @@
 			
 		
 			
-				<li><a href="/tags/java/" title="java">java<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/linux基础/" title="linux基础">linux基础<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/python/" title="python">python<sup>1</sup></a></li>
 			
 		
@@ -236,6 +228,12 @@
 				<li><a href="/tags/爬虫/" title="爬虫">爬虫<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/java/" title="java">java<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linux基础/" title="linux基础">linux基础<sup>1</sup></a></li>
 			
 		
 		</ul>
