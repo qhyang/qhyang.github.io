@@ -1,0 +1,509 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Python爬虫:抓取网上的段子 | Tsinghua&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="yangqinghua">
+    
+
+    
+    <meta name="description" content="自学python有一个星期了，一直在看语法，很是乏味，于是想写个爬虫，参照网上的例子实现的第一个爬虫是抓取糗事百科里的段子。主要用到了urllib2模块。
+爬虫源代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python爬虫:抓取网上的段子">
+<meta property="og:url" content="http://yangqinghua.com/2015/07/28/Python爬虫：抓取网上的段子/index.html">
+<meta property="og:site_name" content="Tsinghua's Blog">
+<meta property="og:description" content="自学python有一个星期了，一直在看语法，很是乏味，于是想写个爬虫，参照网上的例子实现的第一个爬虫是抓取糗事百科里的段子。主要用到了urllib2模块。
+爬虫源代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626">
+<meta property="og:updated_time" content="2015-07-30T12:40:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python爬虫:抓取网上的段子">
+<meta name="twitter:description" content="自学python有一个星期了，一直在看语法，很是乏味，于是想写个爬虫，参照网上的例子实现的第一个爬虫是抓取糗事百科里的段子。主要用到了urllib2模块。
+爬虫源代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626">
+
+    
+    <link rel="alternative" href="atom.xml" title="Tsinghua&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/icon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/apple.ico">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple.ico">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Tsinghua&#39;s Blog" title="Tsinghua&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Tsinghua&#39;s Blog">Tsinghua&#39;s Blog</a></h1>
+				<h2 class="blog-motto">梦想不是浮躁，而是沉淀和积累。</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+						<form class="search" action="http://zhannei.baidu.com/cse/search" target="_blank">
+							<label>Search</label>
+						<input name="s" type="hidden" value= 5007141360455378428 ><input type="text" name="q" size="30" placeholder="搜索"><br>
+						</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/07/28/Python爬虫：抓取网上的段子/" title="Python爬虫:抓取网上的段子" itemprop="url">Python爬虫:抓取网上的段子</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="yangqinghua" target="_blank" itemprop="author">yangqinghua</a>
+		
+  <p class="article-time">
+    <time datetime="2015-07-28T07:49:05.000Z" itemprop="datePublished"> 发表于 2015-07-28</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#爬虫源代码："><span class="toc-number">1.</span> <span class="toc-text">爬虫源代码：</span></a></li></ol>
+		
+		</div>
+		
+		<p>自学python有一个星期了，一直在看语法，很是乏味，于是想写个爬虫，参照<a href="http：//cuiqingcai.com">网上的例子</a>实现的第一个爬虫是抓取糗事百科里的段子。主要用到了<code>urllib2</code>模块。<br></p>
+<h2 id="爬虫源代码：">爬虫源代码：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> thread</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="comment">#糗事百科爬虫类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QSBK</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#初始化方法，定义一些变量</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.pageIndex = <span class="number">1</span></span><br><span class="line">        self.user_agent = <span class="string">'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36'</span></span><br><span class="line">        <span class="comment">#初始化headers</span></span><br><span class="line">        self.headers = &#123; <span class="string">'User-Agent'</span> : self.user_agent &#125;</span><br><span class="line">        <span class="comment">#存放段子的变量，每一个元素是每一页的段子们</span></span><br><span class="line">        self.stories = []</span><br><span class="line">        <span class="comment">#存放程序是否继续运行的变量</span></span><br><span class="line">        self.enable = <span class="keyword">False</span></span><br><span class="line">    <span class="comment">#传入某一页的索引获得页面代码</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getPage</span><span class="params">(self,pageIndex)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            url = <span class="string">'http://www.qiushibaike.com/hot/page/'</span> + str(pageIndex)</span><br><span class="line">            <span class="comment">#构建请求的request</span></span><br><span class="line">            request = urllib2.Request(url,headers = self.headers)</span><br><span class="line">            <span class="comment">#利用urlopen获取页面代码</span></span><br><span class="line">            response = urllib2.urlopen(request)</span><br><span class="line">            <span class="comment">#将页面转化为UTF-8编码</span></span><br><span class="line">            pageCode = response.read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">            <span class="keyword">return</span> pageCode</span><br><span class="line"></span><br><span class="line">        <span class="keyword">except</span> urllib2.URLError, e:</span><br><span class="line">            <span class="keyword">if</span> hasattr(e,<span class="string">"reason"</span>):</span><br><span class="line">                <span class="keyword">print</span> <span class="string">u"连接糗事百科失败,错误原因"</span>,e.reason</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">#传入某一页代码，返回本页不带图片的段子列表</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getPageItems</span><span class="params">(self,pageIndex)</span>:</span></span><br><span class="line">        pageCode = self.getPage(pageIndex)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> pageCode:</span><br><span class="line">            <span class="keyword">print</span> <span class="string">"页面加载失败...."</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        pattern = re.compile(<span class="string">'&lt;div.*?class="author.*?&gt;.*?&lt;a.*?&gt;.*?/&gt;(.*?)&lt;/a&gt;.*?&lt;div.*?class'</span>+</span><br><span class="line">                    <span class="string">'="content".*?&gt;(.*?)&lt;!--(.*?)--&gt;.*?&lt;/div&gt;.*?&lt;div class="stats.*?class="number"&gt;(.*?)&lt;/i&gt;'</span>,re.S)</span><br><span class="line">        items = re.findall(pattern,pageCode)</span><br><span class="line">        <span class="comment">#用来存储每页的段子们</span></span><br><span class="line">        pageStories = []</span><br><span class="line">        <span class="comment">#遍历正则表达式匹配的信息</span></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">          </span><br><span class="line">                <span class="comment">#item[0]是一个段子的作者，item[1]是内容,item[2]发布时间，item[3]是点赞数</span></span><br><span class="line">                pageStories.append([item[<span class="number">0</span>].strip(),item[<span class="number">1</span>].strip(),item[<span class="number">2</span>].strip(),item[<span class="number">3</span>].strip()])</span><br><span class="line">        <span class="keyword">return</span> pageStories</span><br><span class="line"></span><br><span class="line">    <span class="comment">#加载并提取页面的内容，加入到列表中</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">loadPage</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment">#如果当前未看的页数少于2页，则加载新一页</span></span><br><span class="line">        <span class="keyword">if</span> self.enable == <span class="keyword">True</span>:</span><br><span class="line">            <span class="keyword">if</span> len(self.stories) &lt; <span class="number">2</span>:</span><br><span class="line">                <span class="comment">#获取新一页</span></span><br><span class="line">                pageStories = self.getPageItems(self.pageIndex)</span><br><span class="line">                <span class="comment">#将该页的段子存放到全局list中</span></span><br><span class="line">                <span class="keyword">if</span> pageStories:</span><br><span class="line">                    self.stories.append(pageStories)</span><br><span class="line">                    <span class="comment">#获取完之后页码索引加一，表示下次读取下一页</span></span><br><span class="line">                    self.pageIndex += <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">#调用该方法，每次敲回车打印输出一个段子</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getOneStory</span><span class="params">(self,pageStories,page)</span>:</span></span><br><span class="line">        <span class="comment">#遍历一页的段子</span></span><br><span class="line">        <span class="keyword">for</span> story <span class="keyword">in</span> pageStories:</span><br><span class="line">            <span class="comment">#等待用户输入</span></span><br><span class="line">            input = raw_input()</span><br><span class="line">            <span class="comment">#每当输入回车一次，判断一下是否要加载新页面</span></span><br><span class="line">            self.loadPage()</span><br><span class="line">            <span class="comment">#如果输入Q则程序结束</span></span><br><span class="line">            <span class="keyword">if</span> input == <span class="string">"Q"</span>:</span><br><span class="line">                self.enable = <span class="keyword">False</span></span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="keyword">print</span> <span class="string">u"第%d页\t发布人:%s\t发布内容:%s\n发布时间:%s\n点赞:%s\n"</span> %(page,story[<span class="number">0</span>],story[<span class="number">1</span>],story[<span class="number">2</span>],story[<span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#开始方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">start</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">u"正在读取糗事百科,按回车查看新段子，Q退出"</span></span><br><span class="line">        <span class="comment">#使变量为True，程序可以正常运行</span></span><br><span class="line">        self.enable = <span class="keyword">True</span></span><br><span class="line">        <span class="comment">#先加载一页内容</span></span><br><span class="line">        self.loadPage()</span><br><span class="line">        <span class="comment">#局部变量，控制当前读到了第几页</span></span><br><span class="line">        nowPage = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> self.enable:</span><br><span class="line">            <span class="keyword">if</span> len(self.stories)&gt;<span class="number">0</span>:</span><br><span class="line">                <span class="comment">#从全局list中获取一页的段子</span></span><br><span class="line">                pageStories = self.stories[<span class="number">0</span>]</span><br><span class="line">                <span class="comment">#当前读到的页数加一</span></span><br><span class="line">                nowPage += <span class="number">1</span></span><br><span class="line">                <span class="comment">#将全局list中第一个元素删除，因为已经取出</span></span><br><span class="line">                <span class="keyword">del</span> self.stories[<span class="number">0</span>]</span><br><span class="line">                <span class="comment">#输出该页的段子</span></span><br><span class="line">                self.getOneStory(pageStories,nowPage)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">spider = QSBK()</span><br><span class="line">spider.start()</span><br></pre></td></tr></table></figure>
+<p>抓取到热门网页中的段子的作者，发布时间，内容，点赞数，这些段子还是挺搞笑的！</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/python/">python</a><a href="/tags/爬虫/">爬虫</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yangqinghua.com/2015/07/28/Python爬虫：抓取网上的段子/" data-title="Python爬虫:抓取网上的段子 | Tsinghua&#39;s Blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/07/26/Python爬虫：正则表达式/"  title="Python爬虫:正则表达式">
+ <strong>下一篇：</strong><br/> 
+ <span>Python爬虫:正则表达式
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/07/28/Python爬虫：抓取网上的段子/" data-title="Python爬虫:抓取网上的段子" data-url="http://yangqinghua.com/2015/07/28/Python爬虫：抓取网上的段子/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#爬虫源代码："><span class="toc-number">1.</span> <span class="toc-text">爬虫源代码：</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Linux/" title="Linux">Linux<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Python/" title="Python">Python<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/随笔生活/" title="随笔生活">随笔生活<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/生活/" title="生活">生活<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/python/" title="python">python<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/爬虫/" title="爬虫">爬虫<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/正则表达式/" title="正则表达式">正则表达式<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/java/" title="java">java<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linux基础/" title="linux基础">linux基础<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2651697902&verifier=a47fdc6f&dpc=1"></iframe>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello,I&#39;m yangqinghua. For now I&#39;m a graduate student in Beijing. <br/>
+			I want to use this blog to record my life</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2651697902 for http://weibo.com/2651697902" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="yangqinghua">yangqinghua</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"tsinghua"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fcb0b1d4dd32c069cb98cb4dbbb157bae' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
