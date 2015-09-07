@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>LeetCode：ZigZag Conversion(6) | Tsinghua&#39;s Blog</title>
+    <title>消除字符串中多余的空格 | Tsinghua&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yangqinghua">
     
 
     
-    <meta name="description" content="总结leetcode是一个在线编程网站，上面主要收集了各大IT公司的笔试面试题，今天尝试做了一道difficulty是easy的题目，然而还是出现了很多问题，差不多写了快100行代码，问题的突破口还是没有找到，没办法只能baidu一下找答案，看到答案的一瞬间内心崩溃，两个for循环解决问题。感觉这种刷题方法意义不是很大，还是需要自己实现功能，之后再去找更高效的代码。下面是答案：">
+    <meta name="description" content="一道美团的笔试题，去掉字符串中首部和尾部的空格，若字符串中有连续多个空格只保留一个。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode：ZigZag Conversion(6)">
-<meta property="og:url" content="http://yangqinghua.com/2015/08/06/LeetCode：ZigZag Conversion(6)/index.html">
+<meta property="og:title" content="消除字符串中多余的空格">
+<meta property="og:url" content="http://yangqinghua.com/2015/09/06/消除字符串中多余的空格/index.html">
 <meta property="og:site_name" content="Tsinghua's Blog">
-<meta property="og:description" content="总结leetcode是一个在线编程网站，上面主要收集了各大IT公司的笔试面试题，今天尝试做了一道difficulty是easy的题目，然而还是出现了很多问题，差不多写了快100行代码，问题的突破口还是没有找到，没办法只能baidu一下找答案，看到答案的一瞬间内心崩溃，两个for循环解决问题。感觉这种刷题方法意义不是很大，还是需要自己实现功能，之后再去找更高效的代码。下面是答案：">
-<meta property="og:updated_time" content="2015-08-09T13:02:39.000Z">
+<meta property="og:description" content="一道美团的笔试题，去掉字符串中首部和尾部的空格，若字符串中有连续多个空格只保留一个。">
+<meta property="og:updated_time" content="2015-09-07T08:54:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode：ZigZag Conversion(6)">
-<meta name="twitter:description" content="总结leetcode是一个在线编程网站，上面主要收集了各大IT公司的笔试面试题，今天尝试做了一道difficulty是easy的题目，然而还是出现了很多问题，差不多写了快100行代码，问题的突破口还是没有找到，没办法只能baidu一下找答案，看到答案的一瞬间内心崩溃，两个for循环解决问题。感觉这种刷题方法意义不是很大，还是需要自己实现功能，之后再去找更高效的代码。下面是答案：">
+<meta name="twitter:title" content="消除字符串中多余的空格">
+<meta name="twitter:description" content="一道美团的笔试题，去掉字符串中首部和尾部的空格，若字符串中有连续多个空格只保留一个。">
 
     
     <link rel="alternative" href="atom.xml" title="Tsinghua&#39;s Blog" type="application/atom+xml">
@@ -79,14 +79,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/08/06/LeetCode：ZigZag Conversion(6)/" title="LeetCode：ZigZag Conversion(6)" itemprop="url">LeetCode：ZigZag Conversion(6)</a>
+      <a href="/2015/09/06/消除字符串中多余的空格/" title="消除字符串中多余的空格" itemprop="url">消除字符串中多余的空格</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yangqinghua" target="_blank" itemprop="author">yangqinghua</a>
 		
   <p class="article-time">
-    <time datetime="2015-08-06T07:49:05.000Z" itemprop="datePublished"> 发表于 2015-08-06</time>
+    <time datetime="2015-09-06T07:49:05.000Z" itemprop="datePublished"> 发表于 2015-09-06</time>
     
   </p>
 </header>
@@ -95,12 +95,12 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码"><span class="toc-number">2.</span> <span class="toc-text">源码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="总结">总结</h2><p><a href="http://leetcode.com" target="_blank" rel="external">leetcode</a>是一个在线编程网站，上面主要收集了各大IT公司的笔试面试题，今天尝试做了一道difficulty是easy的题目，然而还是出现了很多问题，差不多写了快100行代码，问题的突破口还是没有找到，没办法只能baidu一下找答案，看到答案的一瞬间内心崩溃，两个for循环解决问题。感觉这种刷题方法意义不是很大，还是需要自己实现功能，之后再去找更高效的代码。<br><br>下面是答案：<br><a id="more"></a></p>
-<h2 id="源码">源码</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">	 <span class="keyword">public</span> <span class="keyword">static</span> String convert(String s, <span class="keyword">int</span> nRows) &#123;</span><br><span class="line">	        <span class="keyword">int</span> length = s.length();</span><br><span class="line">	        <span class="keyword">if</span> (length &lt;= nRows || nRows == <span class="number">1</span>) <span class="keyword">return</span> s;</span><br><span class="line">	        <span class="keyword">char</span>[] chars = <span class="keyword">new</span> <span class="keyword">char</span>[length];<span class="comment">//转成数组</span></span><br><span class="line">	        <span class="keyword">int</span> <span class="keyword">step</span> = <span class="number">2</span> * (nRows - <span class="number">1</span>);</span><br><span class="line">	        <span class="keyword">int</span> <span class="keyword">count</span> = <span class="number">0</span>;</span><br><span class="line">		    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nRows; i++)&#123;</span><br><span class="line">	    		<span class="keyword">int</span> interval = <span class="keyword">step</span> - <span class="number">2</span> * i;<span class="comment">//第i行 之间的间隔</span></span><br><span class="line">	    		<span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; length; j += <span class="keyword">step</span>)&#123;</span><br><span class="line">	    		   	chars[<span class="keyword">count</span>] = s.charAt(j);<span class="comment">//返回指定位置的字符</span></span><br><span class="line">	    			<span class="keyword">count</span>++;</span><br><span class="line">	    			<span class="keyword">if</span> (interval &lt; <span class="keyword">step</span> &amp;&amp; interval &gt; <span class="number">0</span> </span><br><span class="line">	    &amp;&amp; j + interval &lt; length &amp;&amp; <span class="keyword">count</span> &lt;  length)&#123;</span><br><span class="line">	    				chars[<span class="keyword">count</span>] = s.charAt(j + interval);</span><br><span class="line">	    				<span class="keyword">count</span>++;</span><br><span class="line">	    			&#125;</span><br><span class="line">	    		&#125;</span><br><span class="line">	    	&#125;</span><br><span class="line">	        <span class="keyword">return</span> <span class="keyword">new</span> String(chars);</span><br><span class="line">	    &#125;</span><br><span class="line">	 <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String args)&#123;</span><br><span class="line">		 System.out.<span class="keyword">println</span>(convert(<span class="string">"abcdefghijk"</span>,<span class="number">3</span>));</span><br><span class="line">		 </span><br><span class="line">	 &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>一道美团的笔试题，去掉字符串中首部和尾部的空格，若字符串中有连续多个空格只保留一个。<br><a id="more"></a></p>
+<h2 id="代码">代码</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">	 <span class="keyword">public</span> <span class="keyword">static</span> String convert(String <span class="keyword">source</span>) &#123;</span><br><span class="line">		</span><br><span class="line">	      String str=<span class="keyword">source</span>.trim();</span><br><span class="line">              <span class="comment">//String str2=source.replace(" ","");//去掉所有空格</span></span><br><span class="line">	      String str2=<span class="keyword">source</span>.trim().replaceAll(<span class="string">"\\s+"</span>,<span class="string">" "</span>);</span><br><span class="line">	      <span class="keyword">return</span> str2;</span><br><span class="line">	       </span><br><span class="line">	    &#125;</span><br><span class="line">	 <span class="keyword">public</span> <span class="keyword">static</span> String convert2(String <span class="keyword">source</span>)<span class="comment">//自己写方法实现</span></span><br><span class="line">	 &#123;</span><br><span class="line">		 <span class="keyword">source</span>=<span class="keyword">source</span>.trim();</span><br><span class="line">		 StringBuffer sb=<span class="keyword">new</span> StringBuffer();</span><br><span class="line">		 <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="keyword">source</span>.length();i++)</span><br><span class="line">		 &#123;</span><br><span class="line">			 <span class="keyword">if</span>(<span class="keyword">source</span>.charAt(i)!=<span class="string">' '</span>)</span><br><span class="line">			 &#123;</span><br><span class="line">				 sb.<span class="keyword">append</span>(<span class="keyword">source</span>.charAt(i));</span><br><span class="line">		     &#125;</span><br><span class="line">			 <span class="keyword">if</span>(<span class="keyword">source</span>.charAt(i)==<span class="string">' '</span>&amp;&amp;<span class="keyword">source</span>.charAt(i+<span class="number">1</span>)!=<span class="string">' '</span>)</span><br><span class="line">			 &#123;</span><br><span class="line">				 sb.<span class="keyword">append</span>(<span class="string">' '</span>);</span><br><span class="line">			 &#125;</span><br><span class="line">		 &#125;</span><br><span class="line">		 <span class="keyword">return</span>  sb.toString();</span><br><span class="line">		 </span><br><span class="line">	 &#125;</span><br><span class="line">	 <span class="keyword">public</span> <span class="keyword">static</span> String convert(String <span class="keyword">source</span>,<span class="keyword">char</span> ch)</span><br><span class="line">	 &#123;</span><br><span class="line">		 StringBuffer buffer=<span class="keyword">new</span> StringBuffer();</span><br><span class="line">		 <span class="keyword">int</span> position=<span class="number">0</span>;</span><br><span class="line">		 <span class="keyword">char</span> currentchar;</span><br><span class="line">		 <span class="keyword">while</span>(position&lt;<span class="keyword">source</span>.length())</span><br><span class="line">		 &#123;</span><br><span class="line">			 currentchar=<span class="keyword">source</span>.charAt(position++);</span><br><span class="line">			 <span class="keyword">if</span>(currentchar!=ch)</span><br><span class="line">			 &#123;</span><br><span class="line">				 buffer.<span class="keyword">append</span>(currentchar);</span><br><span class="line">			 &#125;</span><br><span class="line">			 </span><br><span class="line">		 &#125;</span><br><span class="line">		 <span class="keyword">return</span> buffer.toString();</span><br><span class="line">	 &#125;</span><br><span class="line">	 <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String args[])&#123;</span><br><span class="line">	     System.out.<span class="keyword">println</span>(convert2(<span class="string">" abcd           efgh  ijk "</span>));</span><br><span class="line"><span class="comment">//		 System.out.println(convert("sdf sdafasdf aasdf",' '));</span></span><br><span class="line">	 &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -114,7 +114,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/LeetCode/">LeetCode</a><a href="/tags/java/">java</a>
+  <span></span> <a href="/tags/java/">java</a><a href="/tags/字符串/">字符串</a>
   </div>
 
 </div>
@@ -123,7 +123,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yangqinghua.com/2015/08/06/LeetCode：ZigZag Conversion(6)/" data-title="LeetCode：ZigZag Conversion(6) | Tsinghua&#39;s Blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yangqinghua.com/2015/09/06/消除字符串中多余的空格/" data-title="消除字符串中多余的空格 | Tsinghua&#39;s Blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -136,19 +136,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/08/16/排列算法递归实现/" title="排列算法递归实现">
-  <strong>上一篇：</strong><br/>
-  <span>
-  排列算法递归实现</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/07/28/Python爬虫：抓取网上的段子/"  title="Python爬虫:抓取网上的段子">
+<a href="/2015/08/16/排列算法递归实现/"  title="排列算法递归实现">
  <strong>下一篇：</strong><br/> 
- <span>Python爬虫:抓取网上的段子
+ <span>排列算法递归实现
 </span>
 </a>
 </div>
@@ -157,7 +149,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/08/06/LeetCode：ZigZag Conversion(6)/" data-title="LeetCode：ZigZag Conversion(6)" data-url="http://yangqinghua.com/2015/08/06/LeetCode：ZigZag Conversion(6)/"></div>
+	<div class="ds-thread" data-thread-key="2015/09/06/消除字符串中多余的空格/" data-title="消除字符串中多余的空格" data-url="http://yangqinghua.com/2015/09/06/消除字符串中多余的空格/"></div>
 </section>
 
 
@@ -167,7 +159,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码"><span class="toc-number">2.</span> <span class="toc-text">源码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
