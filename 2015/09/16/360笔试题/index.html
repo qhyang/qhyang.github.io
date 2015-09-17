@@ -1,0 +1,848 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>360笔试题 | Tsinghua&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="yangqinghua">
+    
+
+    
+    <meta name="description" content="今天奇虎360在线笔试，把最后两道编程题总结下来，难度不是特别大，但有些麻烦。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="360笔试题">
+<meta property="og:url" content="http://yangqinghua.com/2015/09/16/360笔试题/index.html">
+<meta property="og:site_name" content="Tsinghua's Blog">
+<meta property="og:description" content="今天奇虎360在线笔试，把最后两道编程题总结下来，难度不是特别大，但有些麻烦。">
+<meta property="og:image" content="http://yangqinghua.com/img/result1.png">
+<meta property="og:image" content="http://yangqinghua.com/img/result2.png">
+<meta property="og:updated_time" content="2015-09-17T01:24:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="360笔试题">
+<meta name="twitter:description" content="今天奇虎360在线笔试，把最后两道编程题总结下来，难度不是特别大，但有些麻烦。">
+
+    
+    <link rel="alternative" href="atom.xml" title="Tsinghua&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/icon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/apple.ico">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple.ico">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Tsinghua&#39;s Blog" title="Tsinghua&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Tsinghua&#39;s Blog">Tsinghua&#39;s Blog</a></h1>
+				<h2 class="blog-motto">梦想不是浮躁，而是沉淀和积累。</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+						<form class="search" action="http://zhannei.baidu.com/cse/search" target="_blank">
+							<label>Search</label>
+						<input name="s" type="hidden" value= 5007141360455378428 ><input type="text" name="q" size="30" placeholder="搜索"><br>
+						</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/09/16/360笔试题/" title="360笔试题" itemprop="url">360笔试题</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="yangqinghua" target="_blank" itemprop="author">yangqinghua</a>
+		
+  <p class="article-time">
+    <time datetime="2015-09-16T14:49:05.000Z" itemprop="datePublished"> 发表于 2015-09-16</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一道"><span class="toc-number">1.</span> <span class="toc-text">第一道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.1.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式及输出结果截图"><span class="toc-number">1.2.</span> <span class="toc-text">输入格式及输出结果截图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二道"><span class="toc-number">2.</span> <span class="toc-text">第二道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码（递归）"><span class="toc-number">2.1.</span> <span class="toc-text">代码（递归）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码（非递归）"><span class="toc-number">2.2.</span> <span class="toc-text">代码（非递归）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式及输出结果截图-1"><span class="toc-number">2.3.</span> <span class="toc-text">输入格式及输出结果截图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+		
+		</div>
+		
+		<p>今天奇虎360在线笔试，把最后两道编程题总结下来，难度不是特别大，但有些麻烦。<br><a id="more"></a></p>
+<h2 id="第一道">第一道</h2><p>判断学生成绩能否被录取，输入学生个数和学生成绩。</p>
+<h3 id="代码">代码</h3><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">Test360</span> &#123;</span><br><span class="line">	public <span class="keyword">static</span> <span class="type">void</span> f(<span class="type">int</span> a)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">Scanner</span> scan1=new <span class="type">Scanner</span>(<span class="type">System</span>.<span class="keyword">in</span>);</span><br><span class="line">		 <span class="type">String</span>  <span class="literal">result</span>[]= new <span class="type">String</span> [a];</span><br><span class="line">		<span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(a&gt;<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="type">int</span> zhengzhi=scan1.nextInt();</span><br><span class="line">			<span class="type">int</span> yingyu=scan1.nextInt();</span><br><span class="line">			<span class="type">int</span> shuxue=scan1.nextInt();</span><br><span class="line">			<span class="type">int</span> zhuanyeke=scan1.nextInt();</span><br><span class="line">			<span class="type">int</span> sum=zhengzhi+yingyu+shuxue+zhuanyeke;</span><br><span class="line">			<span class="keyword">if</span>(zhengzhi&gt;=<span class="number">60</span>&amp;&amp;yingyu&gt;=<span class="number">60</span>&amp;&amp;shuxue&gt;=<span class="number">90</span>&amp;&amp;zhuanyeke&gt;=<span class="number">90</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(sum&gt;=<span class="number">350</span>)</span><br><span class="line">						&#123;</span><br><span class="line">					<span class="literal">result</span>[i++]=<span class="string">"gongfei"</span>;</span><br><span class="line">					</span><br><span class="line">						&#125;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span>(sum&gt;=<span class="number">310</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="literal">result</span>[i++]=<span class="string">"zifei"</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="literal">result</span>[i++]=<span class="string">"fail"</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			a--;</span><br><span class="line">		&#125;</span><br><span class="line">	 <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;i;j++)</span><br><span class="line">	 &#123;</span><br><span class="line">		 <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="literal">result</span>[j]);</span><br><span class="line">	 &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public <span class="keyword">static</span> <span class="type">void</span> main(<span class="type">String</span>[] args) &#123;</span><br><span class="line">		<span class="type">Scanner</span> scan=new <span class="type">Scanner</span>(<span class="type">System</span>.<span class="keyword">in</span>) ;</span><br><span class="line">		<span class="type">int</span> a=scan.nextInt();</span><br><span class="line">		f(a);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="输入格式及输出结果截图">输入格式及输出结果截图</h3><p><img src="/img/result1.png" alt="result1"></p>
+<h2 id="第二道">第二道</h2><p>对正整数分解质因数，用特殊方式打印出来。</p>
+<h3 id="代码（递归）">代码（递归）</h3><p>public class Test362 {</p>
+<pre><code><span class="comment">//判断素数</span>
+<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> boolean <span class="title">issushu</span>(<span class="params"><span class="keyword">int</span> shuzi</span>) </span>{
+    <span class="keyword">if</span> (shuzi==<span class="number">2</span>) {
+        <span class="keyword">return</span> <span class="keyword">true</span>;
+    }
+    <span class="keyword">int</span> max = (<span class="keyword">int</span>)Math.sqrt(shuzi);
+    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=max;i++)
+    {    
+        <span class="keyword">if</span> (shuzi%i==<span class="number">0</span>) {
+            <span class="keyword">return</span> <span class="keyword">false</span>;
+        }
+    }        
+    <span class="keyword">return</span> <span class="keyword">true</span>;            
+}
+
+<span class="comment">//拆分因子，拼接成字符串</span>
+<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String  <span class="title">getshuzu</span>(<span class="params"><span class="keyword">int</span> <span class="keyword">value</span></span>) </span>{ 
+    String <span class="keyword">string</span> = <span class="keyword">new</span> String(<span class="string">""</span>);
+    <span class="keyword">if</span> (issushu(<span class="keyword">value</span>)) {
+        <span class="keyword">return</span> <span class="keyword">string</span>+<span class="string">"*"</span>+<span class="keyword">value</span>;
+    }
+    <span class="keyword">else</span>{
+        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="keyword">value</span>/<span class="number">2</span>;i++)
+        {    
+            <span class="keyword">if</span> (<span class="keyword">value</span>%i==<span class="number">0</span>) {
+                <span class="comment">//if(issushu(i))</span>
+                    <span class="keyword">string</span> = <span class="keyword">string</span>+<span class="string">"*"</span>+i;
+                <span class="comment">//else</span>
+                <span class="comment">//    string = string+getshuzu(i);</span>
+                <span class="keyword">if</span>(issushu(<span class="keyword">value</span>/i))
+                    <span class="keyword">string</span> = <span class="keyword">string</span>+<span class="string">"*"</span>+<span class="keyword">value</span>/i;
+                <span class="keyword">else</span>
+                    <span class="keyword">string</span> = <span class="keyword">string</span>+getshuzu(<span class="keyword">value</span>/i);    
+
+                <span class="keyword">break</span>;
+            }                            
+        }
+        <span class="keyword">return</span> <span class="keyword">string</span>;
+    }        
+}
+
+
+<span class="comment">//打印</span>
+<span class="keyword">public</span> <span class="keyword">static</span> String[]  getstrings(String <span class="keyword">value</span>) {
+    String[] restring = <span class="keyword">new</span> String[<span class="number">5</span>];
+    restring[<span class="number">0</span>]=<span class="string">""</span>;
+    <span class="keyword">char</span>[] dangezifu = <span class="keyword">value</span>.toCharArray();
+    String two = <span class="string">""</span>; String three = <span class="string">""</span>;
+    String four = <span class="string">""</span>; String five = <span class="string">""</span>;
+
+    <span class="keyword">for</span> (<span class="keyword">char</span> c: dangezifu)
+        <span class="keyword">switch</span> (c) {
+        <span class="keyword">case</span> <span class="string">'1'</span>:
+            restring[<span class="number">0</span>] = restring[<span class="number">0</span>]+<span class="string">" | "</span>; two = two+<span class="string">" | "</span>; three = three+<span class="string">" | "</span>;
+            four = four+<span class="string">" | "</span>; five = five+<span class="string">" | "</span>; <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="string">'2'</span>:
+            restring[<span class="number">0</span>] = restring[<span class="number">0</span>]+<span class="string">" - "</span>; two = two+<span class="string">"  |"</span>; three = three+<span class="string">" - "</span>;
+            four = four+<span class="string">"|  "</span>; five = five+<span class="string">" - "</span>; <span class="keyword">break</span>;                
+        <span class="keyword">case</span> <span class="string">'3'</span>:
+            restring[<span class="number">0</span>] = restring[<span class="number">0</span>]+<span class="string">" - "</span>; two = two+<span class="string">"  |"</span>; three = three+<span class="string">" - "</span>;
+            four = four+<span class="string">"  |"</span>; five = five+<span class="string">" - "</span>; <span class="keyword">break</span>;                                
+        <span class="keyword">case</span> <span class="string">'4'</span>:
+            restring[<span class="number">0</span>] = restring[<span class="number">0</span>]+<span class="string">"| |"</span>; two = two+<span class="string">"| |"</span>; three = three+<span class="string">" - "</span>;
+            four = four+<span class="string">"  |"</span>; five = five+<span class="string">"  |"</span>; <span class="keyword">break</span>;                                
+        <span class="keyword">case</span> <span class="string">'5'</span>:
+            restring[<span class="number">0</span>] = restring[<span class="number">0</span>]+<span class="string">" - "</span>; two = two+<span class="string">"|  "</span>; three = three+<span class="string">" - "</span>;
+            four = four+<span class="string">"  |"</span>; five = five+<span class="string">" - "</span>; <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="string">'6'</span>:
+            restring[<span class="number">0</span>] = restring[<span class="number">0</span>]+<span class="string">" - "</span>; two = two+<span class="string">"|  "</span>; three = three+<span class="string">" - "</span>;
+            four = four+<span class="string">"| |"</span>; five = five+<span class="string">" - "</span>; <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="string">'7'</span>:
+            restring[<span class="number">0</span>] = restring[<span class="number">0</span>]+<span class="string">" - "</span>; two = two+<span class="string">"  |"</span>; three = three+<span class="string">"  |"</span>;
+            four = four+<span class="string">"  |"</span>; five = five+<span class="string">"  |"</span>; <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="string">'8'</span>:
+            restring[<span class="number">0</span>] = restring[<span class="number">0</span>]+<span class="string">" - "</span>; two = two+<span class="string">"| |"</span>; three = three+<span class="string">" - "</span>;
+            four = four+<span class="string">"| |"</span>; five = five+<span class="string">" - "</span>; <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="string">'9'</span>:
+            restring[<span class="number">0</span>] = restring[<span class="number">0</span>]+<span class="string">" - "</span>; two = two+<span class="string">"| |"</span>; three = three+<span class="string">" - "</span>;
+            four = four+<span class="string">"  |"</span>; five = five+<span class="string">" - "</span>; <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="string">'*'</span>:
+            restring[<span class="number">0</span>] = restring[<span class="number">0</span>]+<span class="string">"   "</span>; two = two+<span class="string">"   "</span>; three = three+<span class="string">" * "</span>;
+            four = four+<span class="string">"   "</span>; five = five+<span class="string">"   "</span>; <span class="keyword">break</span>;            
+        }        
+    <span class="comment">//restring[0] = restring[0];</span>
+    restring[<span class="number">1</span>] = two;
+    restring[<span class="number">2</span>] = three;
+    restring[<span class="number">3</span>] = four;
+    restring[<span class="number">4</span>] = five;
+    <span class="keyword">return</span> restring;
+}
+
+<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>{
+    <span class="comment">//System.out.println(null+"ddddd");</span>
+
+    Scanner scanner = <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);
+    <span class="keyword">int</span> <span class="keyword">value</span> = <span class="number">0</span>;
+    <span class="keyword">while</span>(<span class="keyword">true</span>) {
+        <span class="keyword">try</span> {                
+            <span class="keyword">value</span> = scanner.nextInt();
+        } <span class="keyword">catch</span> (Exception e) {
+            System.<span class="keyword">out</span>.println(e);
+        }
+
+        <span class="keyword">if</span> (<span class="keyword">value</span>&lt;<span class="number">1</span>){
+            System.<span class="keyword">out</span>.println(<span class="string">"参数有误"</span>);
+            <span class="keyword">return</span> ;            
+        }
+
+
+        String dayin = getshuzu(<span class="keyword">value</span>);
+        System.<span class="keyword">out</span>.println(dayin.substring(<span class="number">1</span>));<span class="comment">//从第二个字符开始截取截取</span>
+        String[] valuestrings = getstrings(dayin.substring(<span class="number">1</span>));
+        <span class="keyword">for</span> (String s : valuestrings) {
+            System.<span class="keyword">out</span>.println(s);            
+        }    
+    }
+}
+</code></pre><p>}</p>
+<h3 id="代码（非递归）">代码（非递归）</h3><p>public class Test360 {<br>    public static void f(int a)<br>    {<br>        Scanner scan1=new Scanner(System.in);<br>         String  result[]= new String [a];<br>        int i=0;<br>        while(a&gt;0)<br>        {<br>            int zhengzhi=scan1.nextInt();<br>            int yingyu=scan1.nextInt();<br>            int shuxue=scan1.nextInt();<br>            int zhuanyeke=scan1.nextInt();<br>            int sum=zhengzhi+yingyu+shuxue+zhuanyeke;<br>            if(zhengzhi&gt;=60&amp;&amp;yingyu&gt;=60&amp;&amp;shuxue&gt;=90&amp;&amp;zhuanyeke&gt;=90)<br>            {<br>                if(sum&gt;=350)<br>                        {<br>                    result[i++]=”gongfei”;</p>
+<pre><code>                    }
+            <span class="keyword">else</span> <span class="keyword">if</span>(sum&gt;=<span class="number">310</span>)
+            {
+                <span class="literal">result</span>[i++]=<span class="string">"zifei"</span>;
+            }
+        }
+        <span class="keyword">else</span>
+        {
+            <span class="literal">result</span>[i++]=<span class="string">"fail"</span>;
+        }
+        a--;
+    }
+ <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;i;j++)
+ {
+     <span class="type">System</span>.<span class="keyword">out</span>.println(<span class="literal">result</span>[j]);
+ }
+}
+
+public <span class="keyword">static</span> <span class="type">void</span> main(<span class="type">String</span>[] args) {
+    <span class="type">Scanner</span> scan=new <span class="type">Scanner</span>(<span class="type">System</span>.<span class="keyword">in</span>) ;
+    <span class="type">int</span> a=scan.nextInt();
+    f(a);
+    <span class="keyword">return</span>;
+
+}
+</code></pre><p>}<br>package com.bit.jdbc;<br>import java.util.*;</p>
+<p>public class Test361 {</p>
+<pre><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) {
+    Scanner sc = <span class="keyword">new</span> Scanner(System.in); 
+    <span class="built_in">int</span> n;
+    <span class="keyword">while</span>(sc.hasNext()){ 
+        n = sc.nextInt();
+        List&lt;Integer&gt; gcd =  primeFactor(n);
+        Iterator it = gcd.iterator();
+        <span class="keyword">String</span> resulttostring = <span class="string">""</span>;<span class="comment">//结果串</span>
+        <span class="keyword">while</span>(it.hasNext()){
+            <span class="keyword">String</span> next =  it.next().toString(); 
+            resulttostring = resulttostring + next + <span class="string">"*"</span>; 
+        }
+        resulttostring = resulttostring.substring(<span class="number">0</span>, resulttostring.length()-<span class="number">1</span>);<span class="comment">//去掉最后一个*</span>
+
+    System.out.<span class="built_in">println</span>(resulttostring);    
+    printresult(resulttostring);
+
+    }  
+}
+
+
+<span class="keyword">public</span> <span class="keyword">static</span> List&lt;Integer&gt; primeFactor(<span class="built_in">int</span> n) {<span class="comment">// 该方法将一个正整数分解成质因数相乘的形式  </span>
+
+    List&lt;Integer&gt; resultlist = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();
+            <span class="built_in">int</span> num = n; 
+            <span class="keyword">if</span> (num &lt; <span class="number">2</span>) {<span class="comment">// 若输入的数小于2,输出提示信息 </span>
+                resultlist.<span class="built_in">add</span>(num);
+                <span class="keyword">return</span> resultlist;
+            } 
+            <span class="keyword">else</span>{ 
+                <span class="built_in">int</span> primeNumber = <span class="number">2</span>;<span class="comment">// 定义最小的质数 </span>
+                <span class="keyword">while</span> (primeNumber &lt;= num) {<span class="comment">// 在质数小于输入的数时，进行循环 </span>
+                    <span class="keyword">if</span> (primeNumber == num) {<span class="comment">// 当质数等于输入的数时,直接输出 </span>
+                        resultlist.<span class="built_in">add</span>(num);
+                        <span class="keyword">break</span>;<span class="comment">// 跳出循环</span>
+                    } 
+                    <span class="keyword">else</span> <span class="keyword">if</span> (num % primeNumber == <span class="number">0</span>) {<span class="comment">// 当输入的数与质数的余数为0时,输出这个质数</span>
+                        resultlist.<span class="built_in">add</span>(primeNumber);
+                        num = num / primeNumber;<span class="comment">// 把剩下的结果赋给num</span>
+
+                    }
+                    <span class="keyword">else</span> {<span class="comment">// 在余数不为0时,质数递增</span>
+                        primeNumber++;
+                    }
+                }
+            }
+            <span class="keyword">return</span> resultlist; 
+}
+
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> printresult(<span class="keyword">String</span> resulttostring){
+
+    <span class="built_in">char</span> num0[][]= 
+        {
+            { <span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>},
+            {<span class="string">'|'</span>,<span class="string">' '</span>,<span class="string">'|'</span>}, 
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">' '</span>},
+            {<span class="string">'|'</span>,<span class="string">' '</span>,<span class="string">' '</span>},
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>}
+            };
+    <span class="built_in">char</span> num1[][]= 
+        {
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">'|'</span>},
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">'|'</span>}, 
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">' '</span>},
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">'|'</span>},
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">'|'</span>}
+            };
+    <span class="built_in">char</span> num2[][]= 
+        {
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>},
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">'|'</span>}, 
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>},
+            {<span class="string">'|'</span>,<span class="string">' '</span>,<span class="string">' '</span>},
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>}
+            };
+    <span class="built_in">char</span> num3[][]= 
+        {
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>},
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">'|'</span>}, 
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>},
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">'|'</span>},
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>}
+            };
+    <span class="built_in">char</span> num4[][]= 
+        {
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">' '</span>},
+            {<span class="string">'|'</span>,<span class="string">' '</span>,<span class="string">'|'</span>}, 
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>},
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">'|'</span>},
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">' '</span>}
+            };
+    <span class="built_in">char</span> num5[][]= 
+        {
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>},
+            {<span class="string">'|'</span>,<span class="string">' '</span>,<span class="string">' '</span>}, 
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>},
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">'|'</span>},
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>}
+            };
+    <span class="built_in">char</span> num6[][]= 
+        {
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>},
+            {<span class="string">'|'</span>,<span class="string">' '</span>,<span class="string">' '</span>}, 
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>},
+            {<span class="string">'|'</span>,<span class="string">' '</span>,<span class="string">'|'</span>},
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>}
+            };
+    <span class="built_in">char</span> num7[][]= 
+        {
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>},
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">'|'</span>}, 
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">' '</span>},
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">'|'</span>},
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">' '</span>}
+            };
+    <span class="built_in">char</span> num8[][]= 
+        {
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>},
+            {<span class="string">'|'</span>,<span class="string">' '</span>,<span class="string">'|'</span>}, 
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>},
+            {<span class="string">'|'</span>,<span class="string">' '</span>,<span class="string">'|'</span>},
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>}
+            };
+    <span class="built_in">char</span> num9[][]= 
+        {
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>},
+            {<span class="string">'|'</span>,<span class="string">' '</span>,<span class="string">'|'</span>}, 
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">' '</span>},
+            {<span class="string">' '</span>,<span class="string">' '</span>,<span class="string">'|'</span>},
+            {<span class="string">' '</span>,<span class="string">'-'</span>,<span class="string">'|'</span>}
+            };
+     <span class="built_in">char</span> num10[][]={<span class="comment">//代表*号</span>
+                {<span class="string">' '</span>},
+                {<span class="string">' '</span>,}, 
+                {<span class="string">'*'</span>,},
+                {<span class="string">' '</span>,},
+                {<span class="string">' '</span>,}
+                };
+
+     StringBuffer[] result = { <span class="keyword">new</span> StringBuffer() ,<span class="keyword">new</span> StringBuffer() ,<span class="keyword">new</span> StringBuffer() ,<span class="keyword">new</span> StringBuffer(),<span class="keyword">new</span> StringBuffer()}; 
+     <span class="built_in">int</span> i = <span class="number">0</span>;
+     <span class="built_in">int</span> length = resulttostring.length();
+     <span class="keyword">for</span>(i = <span class="number">0</span>; i&lt;length;i++){<span class="comment">//结果字符串</span>
+         <span class="built_in">char</span>  temp = resulttostring.charAt(i);<span class="comment">//每个字符  </span>
+         <span class="keyword">for</span>(<span class="built_in">int</span> j = <span class="number">0</span> ;j&lt;<span class="number">5</span>;j++){
+                 <span class="keyword">switch</span>(temp){
+                     <span class="keyword">case</span> <span class="string">'0'</span>:   result[j].<span class="built_in">append</span>(num0[j]); <span class="keyword">break</span>;
+                     <span class="keyword">case</span> <span class="string">'1'</span>:     result[j].<span class="built_in">append</span>(num1[j]); <span class="keyword">break</span>;
+                     <span class="keyword">case</span> <span class="string">'2'</span>:     result[j].<span class="built_in">append</span>(num2[j]); <span class="keyword">break</span>;
+                     <span class="keyword">case</span> <span class="string">'3'</span>:     result[j].<span class="built_in">append</span>(num3[j]); <span class="keyword">break</span>;
+                     <span class="keyword">case</span> <span class="string">'4'</span>:     result[j].<span class="built_in">append</span>(num4[j]); <span class="keyword">break</span>;
+                     <span class="keyword">case</span> <span class="string">'5'</span>:     result[j].<span class="built_in">append</span>(num5[j]); <span class="keyword">break</span>;
+                     <span class="keyword">case</span> <span class="string">'6'</span>:     result[j].<span class="built_in">append</span>(num6[j]); <span class="keyword">break</span>;
+                     <span class="keyword">case</span> <span class="string">'7'</span>:     result[j].<span class="built_in">append</span>(num7[j]); <span class="keyword">break</span>;
+                     <span class="keyword">case</span> <span class="string">'8'</span>:     result[j].<span class="built_in">append</span>(num8[j]); <span class="keyword">break</span>;
+                     <span class="keyword">case</span> <span class="string">'9'</span>:     result[j].<span class="built_in">append</span>(num9[j]); <span class="keyword">break</span>;
+                     <span class="keyword">case</span> <span class="string">'*'</span>:    result[j].<span class="built_in">append</span>(num10[j]); <span class="keyword">break</span>;
+                     <span class="keyword">default</span>: <span class="keyword">break</span>;
+                 }
+         }  
+    }
+
+     <span class="keyword">for</span>(<span class="built_in">int</span> k = <span class="number">0</span>;k&lt;<span class="number">5</span>; k++){
+        System.out.<span class="built_in">println</span>(result[k]);
+    }
+
+
+} 
+</code></pre><p>}</p>
+<h3 id="输入格式及输出结果截图-1">输入格式及输出结果截图</h3><p><img src="/img/result2.png" alt="result2"></p>
+<h2 id="总结">总结</h2><p>第二道题的两段代码是两位学长提供的，在此感谢学长的耐心讲解。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/java/">java</a><a href="/tags/笔试/">笔试</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yangqinghua.com/2015/09/16/360笔试题/" data-title="360笔试题 | Tsinghua&#39;s Blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/09/06/消除字符串中多余的空格/"  title="消除字符串中多余的空格">
+ <strong>下一篇：</strong><br/> 
+ <span>消除字符串中多余的空格
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/09/16/360笔试题/" data-title="360笔试题" data-url="http://yangqinghua.com/2015/09/16/360笔试题/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一道"><span class="toc-number">1.</span> <span class="toc-text">第一道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">1.1.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式及输出结果截图"><span class="toc-number">1.2.</span> <span class="toc-text">输入格式及输出结果截图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二道"><span class="toc-number">2.</span> <span class="toc-text">第二道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码（递归）"><span class="toc-number">2.1.</span> <span class="toc-text">代码（递归）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码（非递归）"><span class="toc-number">2.2.</span> <span class="toc-text">代码（非递归）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式及输出结果截图-1"><span class="toc-number">2.3.</span> <span class="toc-text">输入格式及输出结果截图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Algorithm/" title="Algorithm">Algorithm<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Linux/" title="Linux">Linux<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Python/" title="Python">Python<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/随笔生活/" title="随笔生活">随笔生活<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/java/" title="java">java<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/python/" title="python">python<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/笔试/" title="笔试">笔试<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/爬虫/" title="爬虫">爬虫<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/字符串/" title="字符串">字符串<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/正则表达式/" title="正则表达式">正则表达式<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LeetCode/" title="LeetCode">LeetCode<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/递归/" title="递归">递归<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/生活/" title="生活">生活<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linux基础/" title="linux基础">linux基础<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2651697902&verifier=a47fdc6f&dpc=1"></iframe>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello,I&#39;m yangqinghua. For now I&#39;m a graduate student in Beijing. <br/>
+			I want to use this blog to record my life</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2651697902 for http://weibo.com/2651697902" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="yangqinghua">yangqinghua</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"tsinghua"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fcb0b1d4dd32c069cb98cb4dbbb157bae' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
