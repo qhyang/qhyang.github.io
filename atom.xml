@@ -5,7 +5,7 @@
   <subtitle><![CDATA[梦想不是浮躁，而是沉淀和积累。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yangqinghua.com//"/>
-  <updated>2015-09-17T01:36:32.000Z</updated>
+  <updated>2015-10-10T08:49:24.000Z</updated>
   <id>http://yangqinghua.com//</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[蒙特卡洛算法]]></title>
+    <link href="http://yangqinghua.com/2015/10/10/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E7%AE%97%E6%B3%95/"/>
+    <id>http://yangqinghua.com/2015/10/10/蒙特卡洛算法/</id>
+    <published>2015-10-10T08:07:05.000Z</published>
+    <updated>2015-10-10T08:49:24.000Z</updated>
+    <content type="html"><![CDATA[<p>学习hadoop时，看见有一个自带的example，是计算PI值，于是深入研究一下。百度一下，计算PI的方法还真不少。但在hadoop examples代码中的注释写的是：是采用 Quasi-Monte Carlo 算法来估算PI的值。</p>
+<h2 id="蒙特卡洛方法">蒙特卡洛方法</h2><p>蒙特卡罗方法又称统计模拟法、随机抽样技术，是一种随机模拟方法，以概率和统计理论方法为基础的一种计算方法，是使用随机数（或更常见的伪随机数）来解决很多计算问题的方法。将所求解的问题同一定的概率模型相联系，用电子计算机实现统计模拟或抽样，以获得问题的近似解。为象征性地表明这一方法的概率统计特征，故借用赌城蒙特卡罗命名。 提出： 蒙特卡罗方法于20世纪40年代美国在第二次世界大战中研制原子弹的“曼哈顿计划”计划的成员S.M.乌拉姆和J.冯·诺伊曼首先提出。数学家冯·诺伊曼用驰名世界的赌城—摩纳哥的Monte Carlo—来命名这种方法，为它蒙上了一层神秘色彩。在这之前，蒙特卡罗方法就已经存在。1777年，法国数学家布丰（Georges Louis Leclere de Buffon，1707—1788）提出用投针实验的方法求圆周率π。这被认为是蒙特卡罗方法的起源。<br><a id="more"></a></p>
+<h3 id="1-基本思想">1.基本思想</h3><p>当所求解问题是某种随机事件出现的概率，或者是某个随机变量的期望值时，通过某种“实验”的方法，以这种事件出现的频率估计这一随机事件的概率，或者得到这个随机变量的某些数字特征，并将其作为问题的解。 工作过程 蒙特卡罗方法的解题过程可以归结为三个主要步骤：构造或描述概率过程；实现从已知概率分布抽样；建立各种估计量。 蒙特卡罗方法解题过程的三个主要步骤： （1）构造或描述概率过程 对于本身就具有随机性质的问题，如粒子输运问题，主要是正确描述和模拟这个概率过 程，对于本来不是随机性质的确定性问题，比如计算定积分，就必须事先构造一个人为的概率过程，它的某些参量正好是所要求问题的解。即要将不具有随机性质的问题转化为随机性质的问题。 （2）实现从已知概率分布抽样 构造了概率模型以后，由于各种概率模型都可以看作是由各种各样的概率分布构成的，因此产生已知概率分布的随机变量（或随机向量），就成为实现蒙特卡罗方法模拟实验的基本手段，这也是蒙特卡罗方法被称为随机抽样的原因。最简单、最基本、最重要的一个概率分布是（0，1）上的均匀分布（或称矩形分布）。随机数就是具有这种均匀分布的随机变量。随机数序列就是具有这种分布的总体的一个简单子样，也就是一个具有这种分布的相互独立的随机变数序列。产生随机数的问题，就是从这个分布的抽样问题。在计算机上，可以用物理方法产生随机数，但价格昂贵，不能重复，使用不便。另一种方法是用数学递推公式产生。这样产生的序列，与真正的随机数序列不同，所以称为伪随机数，或伪随机数序列。不过，经过多种统计检验表明，它与真正的随机数，或随机数序列具有相近的性质，因此可把它作为真正的随机数来使用。由已知分布随机抽样有各种方法，与从(0,1)上均匀分布抽样不同，这些方法都是借助于随机序列来实现的，也就是说，都是以产生随机数为前提的。由此可见，随机数是我们实现蒙特卡罗模拟的基本工具。 （3）建立各种估计量 一般说来，构造了概率模型并能从中抽样后，即实现模拟实验后，我们就要确定一个随机变量，作为所要求的问题的解，我们称它为无偏估计。建立各种估计量，相当于对模拟实验的结果进行考察和登记，从中得到问题的解。 数学应用： 通常蒙特·卡罗方法通过构造符合一定规则的随机数来解决数学上的各种问题。对于那些由于计算过于复杂而难以得到解析解或者根本没有解析解的问题，蒙特·卡罗方法是一种有效的求出数值解的方法。一般蒙特·卡罗方法在数学中最常见的应用就是蒙特·卡罗积分。</p>
+<h2 id="利用模型计算圆周率">利用模型计算圆周率</h2><h3 id="1-原理">1.原理</h3><p>在数值积分法中，利用求单位圆的1/4的面积来求得Pi/4从而得到Pi。单位圆的1/4面积是一个扇形，它是边长为1单位正方形的一部分。只要能求出扇形面积S在正方形面积Figure2中占的比例K=S/Figure2就立即能得到S，从而得到Pi的值。怎样求出扇形面积在正方形面积中占的比例K呢？一个办法是在正方形中随机投入很多点，使所投的点落在正方形中每一个位置的机会相等看其中有多少个点落在扇形内。将落在扇形内的点数m与所投点的总数n的比m/n作为k的近似值。P落在扇形内的充要条件是x^2+y^2&lt;=1。</p>
+<h3 id="2-截图">2.截图</h3><p><img src="/img/monte.jpg" alt="monte"></p>
+<h2 id="估算pi">估算pi</h2><h3 id="1-运行hadoop估算PI的命令">1.运行hadoop估算PI的命令</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">hadoop</span> <span class="tag">jar</span> <span class="tag">hadoop-1</span><span class="class">.2</span><span class="class">.1-examples</span><span class="class">.jar</span> <span class="tag">pi</span> 10 100</span><br></pre></td></tr></table></figure>
+<p>后面两个数字的含义是:第1个10指的是要运行10次map任务,第2个数字100指的是每个map任务，要投掷多少次。</p>
+<h3 id="java代码">java代码</h3><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">package com.test;</span><br><span class="line"></span><br><span class="line">import java.util.Random;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MontePI</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line">                 System.<span class="keyword">out</span>.println(<span class="string">"Please input times: "</span>);</span><br><span class="line">                 Scanner sc=<span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);</span><br><span class="line">                caculatePI(sc.nextInt());</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">caculatePI</span>(<span class="params"><span class="keyword">int</span> countInSquarel</span>) </span>&#123;</span><br><span class="line">				<span class="keyword">int</span> countInCircle = <span class="number">0</span>, i, resulttimes;</span><br><span class="line">				<span class="keyword">double</span> x, y;  <span class="comment">//坐标 </span></span><br><span class="line">				Random s = <span class="keyword">new</span> Random();</span><br><span class="line">				<span class="keyword">for</span> (resulttimes = <span class="number">0</span>; resulttimes &lt; <span class="number">10</span>; resulttimes++) &#123;    <span class="comment">//输出十次结果 </span></span><br><span class="line">							<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= countInSquarel; i++) &#123;</span><br><span class="line">										x = s.nextDouble();    <span class="comment">// 在0~1之间产生一个随机x坐标 </span></span><br><span class="line">										y = s.nextDouble(); <span class="comment">// 在0~1之间产生一个随机y坐标 </span></span><br><span class="line">										<span class="keyword">if</span> ((x*x+y*y)&lt;= <span class="number">1.0</span>)</span><br><span class="line">										countInCircle++; <span class="comment">//统计落入单位圆中的点数 </span></span><br><span class="line">							&#125;</span><br><span class="line">							System.<span class="keyword">out</span>.println(<span class="string">"The result of pai is "</span> + (<span class="keyword">double</span>) countInCircle / countInSquarel* <span class="number">4</span>); <span class="comment">//计算出π的值 </span></span><br><span class="line">							countInCircle = <span class="number">0</span>;</span><br><span class="line">				&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>学习hadoop时，看见有一个自带的example，是计算PI值，于是深入研究一下。百度一下，计算PI的方法还真不少。但在hadoop examples代码中的注释写的是：是采用 Quasi-Monte Carlo 算法来估算PI的值。</p>
+<h2 id="蒙特卡洛方法">蒙特卡洛方法</h2><p>蒙特卡罗方法又称统计模拟法、随机抽样技术，是一种随机模拟方法，以概率和统计理论方法为基础的一种计算方法，是使用随机数（或更常见的伪随机数）来解决很多计算问题的方法。将所求解的问题同一定的概率模型相联系，用电子计算机实现统计模拟或抽样，以获得问题的近似解。为象征性地表明这一方法的概率统计特征，故借用赌城蒙特卡罗命名。 提出： 蒙特卡罗方法于20世纪40年代美国在第二次世界大战中研制原子弹的“曼哈顿计划”计划的成员S.M.乌拉姆和J.冯·诺伊曼首先提出。数学家冯·诺伊曼用驰名世界的赌城—摩纳哥的Monte Carlo—来命名这种方法，为它蒙上了一层神秘色彩。在这之前，蒙特卡罗方法就已经存在。1777年，法国数学家布丰（Georges Louis Leclere de Buffon，1707—1788）提出用投针实验的方法求圆周率π。这被认为是蒙特卡罗方法的起源。<br>]]>
+    
+    </summary>
+    
+      <category term="java" scheme="http://yangqinghua.com/tags/java/"/>
+    
+      <category term="Algorithm" scheme="http://yangqinghua.com/categories/Algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[360笔试题]]></title>
