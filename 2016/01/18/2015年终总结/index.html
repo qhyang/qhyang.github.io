@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>LeetCode：ZigZag Conversion(6) | Tsinghua&#39;s Blog</title>
+    <title>2015年终总结 | Tsinghua&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yangqinghua">
     
 
     
-    <meta name="description" content="总结leetcode是一个在线编程网站，上面主要收集了各大IT公司的笔试面试题，今天尝试做了一道difficulty是easy的题目，然而还是出现了很多问题，差不多写了快100行代码，问题的突破口还是没有找到，没办法只能baidu一下找答案，看到答案的一瞬间内心崩溃，两个for循环解决问题。感觉这种刷题方法意义不是很大，还是需要自己实现功能，之后再去找更高效的代码。下面是答案：">
+    <meta name="description" content="当给文档写日期时，才意识到已经踏入2016年了。结束了第一学期最后一场考试，忙完了各种乱七八糟的事情，才算是静下心来！回想2015，这一年对于我来说是变化最大的一年，来到了一座新的城市，结识很多新的朋友。一直想写一篇这一年的总结，却不知从何说起。就想到什么写什么吧！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode：ZigZag Conversion(6)">
-<meta property="og:url" content="http://yangqinghua.com/2015/08/06/LeetCode：ZigZag Conversion(6)/index.html">
+<meta property="og:title" content="2015年终总结">
+<meta property="og:url" content="http://yangqinghua.com/2016/01/18/2015年终总结/index.html">
 <meta property="og:site_name" content="Tsinghua's Blog">
-<meta property="og:description" content="总结leetcode是一个在线编程网站，上面主要收集了各大IT公司的笔试面试题，今天尝试做了一道difficulty是easy的题目，然而还是出现了很多问题，差不多写了快100行代码，问题的突破口还是没有找到，没办法只能baidu一下找答案，看到答案的一瞬间内心崩溃，两个for循环解决问题。感觉这种刷题方法意义不是很大，还是需要自己实现功能，之后再去找更高效的代码。下面是答案：">
-<meta property="og:updated_time" content="2015-08-09T13:02:39.000Z">
+<meta property="og:description" content="当给文档写日期时，才意识到已经踏入2016年了。结束了第一学期最后一场考试，忙完了各种乱七八糟的事情，才算是静下心来！回想2015，这一年对于我来说是变化最大的一年，来到了一座新的城市，结识很多新的朋友。一直想写一篇这一年的总结，却不知从何说起。就想到什么写什么吧！">
+<meta property="og:updated_time" content="2016-02-04T09:32:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode：ZigZag Conversion(6)">
-<meta name="twitter:description" content="总结leetcode是一个在线编程网站，上面主要收集了各大IT公司的笔试面试题，今天尝试做了一道difficulty是easy的题目，然而还是出现了很多问题，差不多写了快100行代码，问题的突破口还是没有找到，没办法只能baidu一下找答案，看到答案的一瞬间内心崩溃，两个for循环解决问题。感觉这种刷题方法意义不是很大，还是需要自己实现功能，之后再去找更高效的代码。下面是答案：">
+<meta name="twitter:title" content="2015年终总结">
+<meta name="twitter:description" content="当给文档写日期时，才意识到已经踏入2016年了。结束了第一学期最后一场考试，忙完了各种乱七八糟的事情，才算是静下心来！回想2015，这一年对于我来说是变化最大的一年，来到了一座新的城市，结识很多新的朋友。一直想写一篇这一年的总结，却不知从何说起。就想到什么写什么吧！">
 
     
     <link rel="alternative" href="atom.xml" title="Tsinghua&#39;s Blog" type="application/atom+xml">
@@ -79,14 +79,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/08/06/LeetCode：ZigZag Conversion(6)/" title="LeetCode：ZigZag Conversion(6)" itemprop="url">LeetCode：ZigZag Conversion(6)</a>
+      <a href="/2016/01/18/2015年终总结/" title="2015年终总结" itemprop="url">2015年终总结</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yangqinghua" target="_blank" itemprop="author">yangqinghua</a>
 		
   <p class="article-time">
-    <time datetime="2015-08-06T07:49:05.000Z" itemprop="datePublished"> 发表于 2015-08-06</time>
+    <time datetime="2016-01-18T07:49:05.000Z" itemprop="datePublished"> 发表于 2016-01-18</time>
     
   </p>
 </header>
@@ -95,12 +95,19 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码"><span class="toc-number">2.</span> <span class="toc-text">源码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#这一年发生了什么"><span class="toc-number">1.</span> <span class="toc-text">这一年发生了什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新一年的计划"><span class="toc-number">2.</span> <span class="toc-text">新一年的计划</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="总结">总结</h2><p><a href="http://leetcode.com" target="_blank" rel="external">leetcode</a>是一个在线编程网站，上面主要收集了各大IT公司的笔试面试题，今天尝试做了一道difficulty是easy的题目，然而还是出现了很多问题，差不多写了快100行代码，问题的突破口还是没有找到，没办法只能baidu一下找答案，看到答案的一瞬间内心崩溃，两个for循环解决问题。感觉这种刷题方法意义不是很大，还是需要自己实现功能，之后再去找更高效的代码。<br><br>下面是答案：<br><a id="more"></a></p>
-<h2 id="源码">源码</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">	 <span class="keyword">public</span> <span class="keyword">static</span> String convert(String s, <span class="keyword">int</span> nRows) &#123;</span><br><span class="line">	        <span class="keyword">int</span> length = s.length();</span><br><span class="line">	        <span class="keyword">if</span> (length &lt;= nRows || nRows == <span class="number">1</span>) <span class="keyword">return</span> s;</span><br><span class="line">	        <span class="keyword">char</span>[] chars = <span class="keyword">new</span> <span class="keyword">char</span>[length];<span class="comment">//转成数组</span></span><br><span class="line">	        <span class="keyword">int</span> <span class="keyword">step</span> = <span class="number">2</span> * (nRows - <span class="number">1</span>);</span><br><span class="line">	        <span class="keyword">int</span> <span class="keyword">count</span> = <span class="number">0</span>;</span><br><span class="line">		    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nRows; i++)&#123;</span><br><span class="line">	    		<span class="keyword">int</span> interval = <span class="keyword">step</span> - <span class="number">2</span> * i;<span class="comment">//第i行 之间的间隔</span></span><br><span class="line">	    		<span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; length; j += <span class="keyword">step</span>)&#123;</span><br><span class="line">	    		   	chars[<span class="keyword">count</span>] = s.charAt(j);<span class="comment">//返回指定位置的字符</span></span><br><span class="line">	    			<span class="keyword">count</span>++;</span><br><span class="line">	    			<span class="keyword">if</span> (interval &lt; <span class="keyword">step</span> &amp;&amp; interval &gt; <span class="number">0</span> </span><br><span class="line">	    &amp;&amp; j + interval &lt; length &amp;&amp; <span class="keyword">count</span> &lt;  length)&#123;</span><br><span class="line">	    				chars[<span class="keyword">count</span>] = s.charAt(j + interval);</span><br><span class="line">	    				<span class="keyword">count</span>++;</span><br><span class="line">	    			&#125;</span><br><span class="line">	    		&#125;</span><br><span class="line">	    	&#125;</span><br><span class="line">	        <span class="keyword">return</span> <span class="keyword">new</span> String(chars);</span><br><span class="line">	    &#125;</span><br><span class="line">	 <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String args)&#123;</span><br><span class="line">		 System.out.<span class="keyword">println</span>(convert(<span class="string">"abcdefghijk"</span>,<span class="number">3</span>));</span><br><span class="line">		 </span><br><span class="line">	 &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>当给文档写日期时，才意识到已经踏入2016年了。结束了第一学期最后一场考试，忙完了各种乱七八糟的事情，才算是静下心来！回想2015，这一年对于我来说是变化最大的一年，来到了一座新的城市，结识很多新的朋友。一直想写一篇这一年的总结，却不知从何说起。就想到什么写什么吧！<br><a id="more"></a></p>
+<h2 id="这一年发生了什么">这一年发生了什么</h2><p>上半年结束了自己的本科四年生活，一个个小伙伴都各奔前程，还是挺伤感的。班里一起吃散伙饭的时候，大家都喝了很多，也说了很多，吃完这顿饭，可能有些同学就再也见不到了。<br>来到了北理工，说一下研究生的课程，与本科相较课程名字前面多了“高级”二字，内容感觉还是换汤不换药。讲收获的话，当初选课的时候选了两门有大作业了的课，还是明智的，真正动手去做，对实践能力才有一些提高。来读研，不能说失望吧，但对很多东西的看法有很多改变。用一句话安慰一下自己：师傅领进门,修行在个人。<br>总结一起来一句话：2015年对于我来说是很有意义的一年。</p>
+<h2 id="新一年的计划">新一年的计划</h2><p>2016年会是非常繁忙又至关重要的一年。希望自己能够合理的管理和分配时间，学习更多的东西，多开阔一下自己的眼界。一月份上旬，几乎每天忙得晕头转向。“有时候会因为走的太快，忘了一开始的方向”，这是提醒自己，不要着急，梦想不是浮躁，而是沉淀和积累。还是列一个shedule吧。</p>
+<ul>
+<li>学习面试常用算法。亲身经历表明，高大上的公司也都会拿这个当门槛。最重要的一本书就是《编程之美》，决定先把它看完。</li>
+<li>一定出去见识见识外面的世界，但是出去不是目的，一定要有有收获，最好能为以后selection有帮助。</li>
+<li>今年的新年礼物，就是kindle，还是得多读书，不一定非得是技术方面的。</li>
+<li>坚持每天学习英语（扇贝打卡），提高自己的英文文献的阅读能力，不能一看到英文文档就打怵。<br>当然还有最最要的一点，就是坚持锻炼。<br>最后，今年本命年，一定会有好运！   </li>
+</ul>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -108,14 +115,9 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+  <a class="article-category-link" href="/categories/随笔生活/">随笔生活</a>
 </div>
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/LeetCode/">LeetCode</a><a href="/tags/java/">java</a>
-  </div>
 
 </div>
 
@@ -123,7 +125,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yangqinghua.com/2015/08/06/LeetCode：ZigZag Conversion(6)/" data-title="LeetCode：ZigZag Conversion(6) | Tsinghua&#39;s Blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yangqinghua.com/2016/01/18/2015年终总结/" data-title="2015年终总结 | Tsinghua&#39;s Blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -137,18 +139,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/08/16/排列算法递归实现/" title="排列算法递归实现">
+ <a href="/2016/01/30/猴年猴赛雷/" title="猴年猴赛雷">
   <strong>上一篇：</strong><br/>
   <span>
-  排列算法递归实现</span>
+  猴年猴赛雷</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/07/28/Python爬虫：抓取网上的段子/"  title="Python爬虫:抓取网上的段子">
+<a href="/2015/12/20/排序算法总结/"  title="排序算法总结">
  <strong>下一篇：</strong><br/> 
- <span>Python爬虫:抓取网上的段子
+ <span>排序算法总结
 </span>
 </a>
 </div>
@@ -157,7 +159,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/08/06/LeetCode：ZigZag Conversion(6)/" data-title="LeetCode：ZigZag Conversion(6)" data-url="http://yangqinghua.com/2015/08/06/LeetCode：ZigZag Conversion(6)/"></div>
+	<div class="ds-thread" data-thread-key="2016/01/18/2015年终总结/" data-title="2015年终总结" data-url="http://yangqinghua.com/2016/01/18/2015年终总结/"></div>
 </section>
 
 
@@ -167,7 +169,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码"><span class="toc-number">2.</span> <span class="toc-text">源码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#这一年发生了什么"><span class="toc-number">1.</span> <span class="toc-text">这一年发生了什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新一年的计划"><span class="toc-number">2.</span> <span class="toc-text">新一年的计划</span></a></li></ol>
  
   </div>
 
