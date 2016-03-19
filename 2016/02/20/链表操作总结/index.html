@@ -1,0 +1,549 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>单链表操作总结 | Tsinghua&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="yangqinghua">
+    
+
+    
+    <meta name="description" content="单链表是一种比较基础的数据结构,在面试中还是比较常问的,所以拿出来写了一下。
+单链表的定义12345678public static class Node&amp;#123;         int value;         Node next;         public Node(int n)&amp;#123;             this.value=n;             this.ne">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单链表操作总结">
+<meta property="og:url" content="http://yangqinghua.com/2016/02/20/链表操作总结/index.html">
+<meta property="og:site_name" content="Tsinghua's Blog">
+<meta property="og:description" content="单链表是一种比较基础的数据结构,在面试中还是比较常问的,所以拿出来写了一下。
+单链表的定义12345678public static class Node&amp;#123;         int value;         Node next;         public Node(int n)&amp;#123;             this.value=n;             this.ne">
+<meta property="og:updated_time" content="2016-03-19T09:22:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="单链表操作总结">
+<meta name="twitter:description" content="单链表是一种比较基础的数据结构,在面试中还是比较常问的,所以拿出来写了一下。
+单链表的定义12345678public static class Node&amp;#123;         int value;         Node next;         public Node(int n)&amp;#123;             this.value=n;             this.ne">
+
+    
+    <link rel="alternative" href="atom.xml" title="Tsinghua&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/icon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/apple.ico">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple.ico">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Tsinghua&#39;s Blog" title="Tsinghua&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Tsinghua&#39;s Blog">Tsinghua&#39;s Blog</a></h1>
+				<h2 class="blog-motto">梦想不是浮躁，而是沉淀和积累。</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+						<form class="search" action="http://zhannei.baidu.com/cse/search" target="_blank">
+							<label>Search</label>
+						<input name="s" type="hidden" value= 5007141360455378428 ><input type="text" name="q" size="30" placeholder="搜索"><br>
+						</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/02/20/链表操作总结/" title="单链表操作总结" itemprop="url">单链表操作总结</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="yangqinghua" target="_blank" itemprop="author">yangqinghua</a>
+		
+  <p class="article-time">
+    <time datetime="2016-02-20T04:07:05.000Z" itemprop="datePublished"> 发表于 2016-02-20</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#单链表的定义"><span class="toc-number">1.</span> <span class="toc-text">单链表的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单链表的构造"><span class="toc-number">2.</span> <span class="toc-text">单链表的构造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从头到尾打印链表打印单链表"><span class="toc-number">3.</span> <span class="toc-text">从头到尾打印链表打印单链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从尾到头打印单链表（递归）"><span class="toc-number">4.</span> <span class="toc-text">从尾到头打印单链表（递归）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从尾到头打印单链表（借助栈）"><span class="toc-number">5.</span> <span class="toc-text">从尾到头打印单链表（借助栈）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#求单链表中结点的个数"><span class="toc-number">6.</span> <span class="toc-text">求单链表中结点的个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将单链表反转(循环)"><span class="toc-number">7.</span> <span class="toc-text">将单链表反转(循环)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将单链表反转(递归)"><span class="toc-number">8.</span> <span class="toc-text">将单链表反转(递归)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找单链表中的倒数第K个结点"><span class="toc-number">9.</span> <span class="toc-text">查找单链表中的倒数第K个结点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找单链表的中间结点（快慢指针）"><span class="toc-number">10.</span> <span class="toc-text">查找单链表的中间结点（快慢指针）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#合并两个有序的单链表head1和head2（循环）"><span class="toc-number">11.</span> <span class="toc-text">合并两个有序的单链表head1和head2（循环）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对单链表进行排序（插入）"><span class="toc-number">12.</span> <span class="toc-text">对单链表进行排序（插入）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对单链表进行排序（归并）"><span class="toc-number">13.</span> <span class="toc-text">对单链表进行排序（归并）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#合并两个有序的单链表head1和head2（递归）"><span class="toc-number">14.</span> <span class="toc-text">合并两个有序的单链表head1和head2（递归）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断一个单链表中是否有环（快慢指针）"><span class="toc-number">15.</span> <span class="toc-text">判断一个单链表中是否有环（快慢指针）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断一个单链表中是否有环，并求进入环中的第一个节点（快慢指针）"><span class="toc-number">16.</span> <span class="toc-text">判断一个单链表中是否有环，并求进入环中的第一个节点（快慢指针）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#已知一个单链表中存在环，求进入环中的第一个节点（利用hashmap）"><span class="toc-number">17.</span> <span class="toc-text">已知一个单链表中存在环，求进入环中的第一个节点（利用hashmap）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断两个单链表是否相交,如果相交返回第一个节点，否则返回null（Y型）"><span class="toc-number">18.</span> <span class="toc-text">判断两个单链表是否相交,如果相交返回第一个节点，否则返回null（Y型）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#给出一单链表头指针head和一节点指针delete，O(1)时间复杂度删除节点delete_（交换值）"><span class="toc-number">19.</span> <span class="toc-text">给出一单链表头指针head和一节点指针delete，O(1)时间复杂度删除节点delete （交换值）</span></a></li></ol>
+		
+		</div>
+		
+		<p>单链表是一种比较基础的数据结构,在面试中还是比较常问的,所以拿出来写了一下。</p>
+<h3 id="单链表的定义">单链表的定义</h3><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">Node</span>&#123;  </span><br><span class="line">       <span class="keyword">int</span> <span class="keyword">value</span>;  </span><br><span class="line">       Node next;  </span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="title">Node</span>(<span class="params"><span class="keyword">int</span> n</span>)</span>&#123;  </span><br><span class="line">           <span class="keyword">this</span>.<span class="keyword">value</span>=n;  </span><br><span class="line">           <span class="keyword">this</span>.next=<span class="keyword">null</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="单链表的构造">单链表的构造</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;  </span><br><span class="line">         </span><br><span class="line">        Node head=<span class="keyword">null</span>;  </span><br><span class="line">        Node temp=<span class="keyword">null</span>;</span><br><span class="line">     </span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">      &#123;</span><br><span class="line">    	  <span class="keyword">if</span>(i==<span class="number">0</span>)&#123;</span><br><span class="line">            head=<span class="keyword">new</span> Node(i);  </span><br><span class="line">            temp=head;</span><br><span class="line">      &#125;</span><br><span class="line">    	  <span class="keyword">else</span> </span><br><span class="line">    	  &#123;</span><br><span class="line">    		  temp.<span class="keyword">next</span>=<span class="keyword">new</span> Node(i);</span><br><span class="line">    		  temp=temp.<span class="keyword">next</span>;</span><br><span class="line">    		  </span><br><span class="line">    	  &#125;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="从头到尾打印链表打印单链表">从头到尾打印链表打印单链表</h3><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span>(<span class="params">Node head</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(head!=<span class="keyword">null</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		System.<span class="keyword">out</span>.println(head.<span class="keyword">value</span>);</span><br><span class="line">		head=head.next;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="从尾到头打印单链表（递归）">从尾到头打印单链表（递归）</h3><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">reversePrintListRec</span>(<span class="params">Node head</span>)</span>&#123;  </span><br><span class="line">       <span class="keyword">if</span>(head==<span class="keyword">null</span>)<span class="keyword">return</span>;  </span><br><span class="line">       <span class="keyword">else</span>&#123;  </span><br><span class="line">           reversePrintListRec(head.next);  </span><br><span class="line">           System.<span class="keyword">out</span>.println(head.<span class="keyword">value</span>);  </span><br><span class="line">       &#125;  </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="从尾到头打印单链表（借助栈）">从尾到头打印单链表（借助栈）</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> reversePrintListStack(Node head)&#123;  </span><br><span class="line">        Stack&lt;Node&gt; s=<span class="keyword">new</span> Stack&lt;Node&gt;();  </span><br><span class="line">        <span class="keyword">while</span>(head!=<span class="keyword">null</span>)&#123;  </span><br><span class="line">            s.<span class="keyword">push</span>(head);  </span><br><span class="line">            head=head.<span class="keyword">next</span>;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">while</span>(!s.isEmpty())&#123;  </span><br><span class="line">            System.out.<span class="keyword">println</span>(s.<span class="keyword">pop</span>().value);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="求单链表中结点的个数">求单链表中结点的个数</h3><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> static <span class="built_in">int</span> getListLength(Node head)&#123;  </span><br><span class="line">        <span class="built_in">int</span> <span class="built_in">len</span>=<span class="number">0</span>;  </span><br><span class="line">        <span class="keyword">while</span>(head!=<span class="literal">null</span>)&#123;  </span><br><span class="line">            <span class="built_in">len</span>++;  </span><br><span class="line">            head=head.<span class="keyword">next</span>;  </span><br><span class="line">        &#125;  </span><br><span class="line">        return <span class="built_in">len</span>;  </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="将单链表反转(循环)">将单链表反转(循环)</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Node reverseList(Node head)&#123;  </span><br><span class="line">      <span class="keyword">if</span>(head==<span class="keyword">null</span>||head.<span class="keyword">next</span>==<span class="keyword">null</span>)<span class="keyword">return</span> head;  </span><br><span class="line">      Node pre=<span class="keyword">null</span>;  </span><br><span class="line">      Node nex=<span class="keyword">null</span>; </span><br><span class="line">      <span class="keyword">while</span>(head!=<span class="keyword">null</span>)&#123;  </span><br><span class="line">          nex=head.<span class="keyword">next</span>;  </span><br><span class="line">          head.<span class="keyword">next</span>=pre;  </span><br><span class="line">          pre=head;  </span><br><span class="line">          </span><br><span class="line">          head=nex;  </span><br><span class="line">      &#125;  </span><br><span class="line">      <span class="keyword">return</span> pre;  </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="将单链表反转(递归)">将单链表反转(递归)</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Node reverseListRec(Node head)&#123;  </span><br><span class="line">       <span class="keyword">if</span>(head==<span class="keyword">null</span>||head.<span class="keyword">next</span>==<span class="keyword">null</span>)<span class="keyword">return</span> head;  </span><br><span class="line">       Node reHead=reverseListRec(head.<span class="keyword">next</span>);  </span><br><span class="line">       head.<span class="keyword">next</span>.<span class="keyword">next</span>=head;  </span><br><span class="line">       head.<span class="keyword">next</span>=<span class="keyword">null</span>;  </span><br><span class="line">       <span class="keyword">return</span> reHead;  </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="查找单链表中的倒数第K个结点">查找单链表中的倒数第K个结点</h3><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="function">Node <span class="title">reGetKthNode</span><span class="params">(Node head,<span class="keyword">int</span> k)</span></span>&#123;  </span><br><span class="line">       <span class="keyword">if</span>(head==<span class="keyword">null</span>)<span class="keyword">return</span> head;  </span><br><span class="line">       <span class="keyword">int</span> len=getListLength(head);  </span><br><span class="line">       <span class="keyword">if</span>(k&gt;len)<span class="keyword">return</span> <span class="keyword">null</span>;  </span><br><span class="line">       Node <span class="keyword">target</span>=head;  </span><br><span class="line">       Node nexk=head;  </span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;  </span><br><span class="line">           nexk=nexk.next;  </span><br><span class="line">       &#125;  </span><br><span class="line">       <span class="keyword">while</span>(nexk!=<span class="keyword">null</span>)&#123;  </span><br><span class="line">           <span class="keyword">target</span>=<span class="keyword">target</span>.next;  </span><br><span class="line">         </span><br><span class="line">           nexk=nexk.next;  </span><br><span class="line">       &#125;  </span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">target</span>;  </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="查找单链表的中间结点（快慢指针）">查找单链表的中间结点（快慢指针）</h3><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="function">Node <span class="title">getMiddleNode</span><span class="params">(Node head)</span></span>&#123;  </span><br><span class="line">       <span class="keyword">if</span>(head==<span class="keyword">null</span>||head.next==<span class="keyword">null</span>)<span class="keyword">return</span> head;  </span><br><span class="line">       Node <span class="keyword">target</span>=head;  </span><br><span class="line">       Node temp=head;  </span><br><span class="line">       <span class="keyword">while</span>(temp!=<span class="keyword">null</span>&amp;&amp;temp.next!=<span class="keyword">null</span>)&#123;  </span><br><span class="line">           <span class="keyword">target</span>=<span class="keyword">target</span>.next;  </span><br><span class="line">           temp=temp.next.next;  </span><br><span class="line">       &#125;  </span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">target</span>;  </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="合并两个有序的单链表head1和head2（循环）">合并两个有序的单链表head1和head2（循环）</h3><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="function">Node <span class="title">mergeSortedList</span><span class="params">(Node head1,Node head2)</span></span>&#123;  </span><br><span class="line">       <span class="keyword">if</span>(head1==<span class="keyword">null</span>)<span class="keyword">return</span> head2;  </span><br><span class="line">       <span class="keyword">if</span>(head2==<span class="keyword">null</span>)<span class="keyword">return</span> head1;  </span><br><span class="line">       Node <span class="keyword">target</span>=<span class="keyword">null</span>;  </span><br><span class="line">       <span class="keyword">if</span>(head1.value&gt;head2.value)&#123;  </span><br><span class="line">           <span class="keyword">target</span>=head2;  </span><br><span class="line">           head2=head2.next;  </span><br><span class="line">       &#125;  </span><br><span class="line">       <span class="keyword">else</span>&#123;  </span><br><span class="line">           <span class="keyword">target</span>=head1;  </span><br><span class="line">           head1=head1.next;  </span><br><span class="line">       &#125;  </span><br><span class="line">       <span class="keyword">target</span>.next=<span class="keyword">null</span>;  </span><br><span class="line">       Node mergeHead=<span class="keyword">target</span>;  </span><br><span class="line">       <span class="keyword">while</span>(head1!=<span class="keyword">null</span> &amp;&amp; head2!=<span class="keyword">null</span>)&#123;  </span><br><span class="line">           <span class="keyword">if</span>(head1.value&gt;head2.value)&#123;  </span><br><span class="line">               <span class="keyword">target</span>.next=head2;  </span><br><span class="line">               head2=head2.next;  </span><br><span class="line">           &#125;  </span><br><span class="line">           <span class="keyword">else</span>&#123;  </span><br><span class="line">               <span class="keyword">target</span>.next=head1;  </span><br><span class="line">               head1=head1.next;  </span><br><span class="line">           &#125;  </span><br><span class="line">           <span class="keyword">target</span>=<span class="keyword">target</span>.next;  </span><br><span class="line">           <span class="keyword">target</span>.next=<span class="keyword">null</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">       <span class="keyword">if</span>(head1==<span class="keyword">null</span>)<span class="keyword">target</span>.next=head2;  </span><br><span class="line">       <span class="keyword">else</span> <span class="keyword">target</span>.next=head1;  </span><br><span class="line">       <span class="keyword">return</span> mergeHead;  </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="对单链表进行排序（插入）">对单链表进行排序（插入）</h3><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public Node insertionSortList(Node head) &#123;  </span><br><span class="line">       <span class="keyword">if</span>(<span class="variable">head=</span>=<span class="constant">null</span>||head.<span class="variable">next=</span>=<span class="constant">null</span>)return head;  </span><br><span class="line">       Node <span class="variable">pnex=</span>head.next;  </span><br><span class="line">       Node <span class="variable">pnex_nex=</span><span class="constant">null</span>;  </span><br><span class="line">       head.<span class="variable">next=</span><span class="constant">null</span>;  </span><br><span class="line">       while(pnex!=<span class="constant">null</span>)&#123;  </span><br><span class="line">           <span class="variable">pnex_nex=</span>pnex.next;  </span><br><span class="line">           Node <span class="variable">temp=</span>head;  </span><br><span class="line">           Node <span class="variable">temp_pre=</span><span class="constant">null</span>;  </span><br><span class="line">           while(temp!=<span class="constant">null</span>)&#123;  </span><br><span class="line">               <span class="keyword">if</span>(temp.value&gt;pnex.value)break;  </span><br><span class="line">               <span class="variable">temp_pre=</span>temp;  </span><br><span class="line">               <span class="variable">temp=</span>temp.next;  </span><br><span class="line">           &#125;  </span><br><span class="line">           <span class="keyword">if</span>(<span class="variable">temp_pre=</span>=<span class="constant">null</span>)&#123;  </span><br><span class="line">               <span class="variable">head=</span>pnex;  </span><br><span class="line">               pnex.<span class="variable">next=</span>temp;  </span><br><span class="line">           &#125;  </span><br><span class="line">           <span class="keyword">else</span>&#123;  </span><br><span class="line">               temp_pre.<span class="variable">next=</span>pnex;  </span><br><span class="line">               pnex.<span class="variable">next=</span>temp;  </span><br><span class="line">           &#125;  </span><br><span class="line">           <span class="variable">pnex=</span>pnex_nex;  </span><br><span class="line">       &#125;  </span><br><span class="line">       return head;  </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="对单链表进行排序（归并）">对单链表进行排序（归并）</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Node listSort(Node head)&#123;  </span><br><span class="line">       Node nex=<span class="keyword">null</span>;  </span><br><span class="line">       <span class="keyword">if</span>(head==<span class="keyword">null</span>||head.<span class="keyword">next</span>==<span class="keyword">null</span>)<span class="keyword">return</span> head;  </span><br><span class="line">       <span class="keyword">else</span> <span class="keyword">if</span>(head.<span class="keyword">next</span>.<span class="keyword">next</span>==<span class="keyword">null</span>)&#123;  </span><br><span class="line">           nex=head.<span class="keyword">next</span>;  </span><br><span class="line">           head.<span class="keyword">next</span>=<span class="keyword">null</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">       <span class="keyword">else</span>&#123;  </span><br><span class="line">           Node mid=getMiddleNode(head);  </span><br><span class="line">           nex=mid.<span class="keyword">next</span>;  </span><br><span class="line">           mid.<span class="keyword">next</span>=<span class="keyword">null</span>;  </span><br><span class="line">       &#125;  </span><br><span class="line">       <span class="keyword">return</span> mergeSortedList(listSort(head),listSort(nex));</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="合并两个有序的单链表head1和head2（递归）">合并两个有序的单链表head1和head2（递归）</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Node mergeSortedListRec(Node head1,Node head2)&#123;  </span><br><span class="line">      <span class="keyword">if</span>(head1==<span class="keyword">null</span>)<span class="keyword">return</span> head2;  </span><br><span class="line">      <span class="keyword">if</span>(head2==<span class="keyword">null</span>)<span class="keyword">return</span> head1;  </span><br><span class="line">      <span class="keyword">if</span>(head1.value&gt;head2.value)&#123;  </span><br><span class="line">          head2.<span class="keyword">next</span>=mergeSortedListRec(head2.<span class="keyword">next</span>,head1);  </span><br><span class="line">          <span class="keyword">return</span> head2;  </span><br><span class="line">      &#125;  </span><br><span class="line">      <span class="keyword">else</span>&#123;  </span><br><span class="line">          head1.<span class="keyword">next</span>=mergeSortedListRec(head1.<span class="keyword">next</span>,head2);  </span><br><span class="line">          <span class="keyword">return</span> head1;  </span><br><span class="line">      &#125;  </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="判断一个单链表中是否有环（快慢指针）">判断一个单链表中是否有环（快慢指针）</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> hasCycle(Node head)&#123;  </span><br><span class="line">      <span class="keyword">boolean</span> flag=<span class="keyword">false</span>;  </span><br><span class="line">      Node p1=head;  </span><br><span class="line">      Node p2=head;  </span><br><span class="line">      <span class="keyword">while</span>(p1!=<span class="keyword">null</span>&amp;&amp;p2!=<span class="keyword">null</span>)&#123;  </span><br><span class="line">          p1=p1.<span class="keyword">next</span>;  </span><br><span class="line">          p2=p2.<span class="keyword">next</span>.<span class="keyword">next</span>;  </span><br><span class="line">          <span class="keyword">if</span>(p2==p1)&#123;  </span><br><span class="line">              flag=<span class="keyword">true</span>;  </span><br><span class="line">              <span class="keyword">break</span>;  </span><br><span class="line">          &#125;  </span><br><span class="line">      &#125;  </span><br><span class="line">      <span class="keyword">return</span> flag;  </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="判断一个单链表中是否有环，并求进入环中的第一个节点（快慢指针）">判断一个单链表中是否有环，并求进入环中的第一个节点（快慢指针）</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Node getFirstNodeInCycle(Node head)&#123;  </span><br><span class="line">     Node fast=head;  </span><br><span class="line">     Node slow=head;  </span><br><span class="line">     <span class="keyword">while</span>(fast!=<span class="keyword">null</span>&amp;&amp;fast.<span class="keyword">next</span>!=<span class="keyword">null</span>)&#123;  </span><br><span class="line">         slow=slow.<span class="keyword">next</span>;  </span><br><span class="line">         fast=fast.<span class="keyword">next</span>.<span class="keyword">next</span>;  </span><br><span class="line">         <span class="keyword">if</span>(slow==fast)<span class="keyword">break</span>;  </span><br><span class="line">     &#125;  </span><br><span class="line">     <span class="keyword">if</span>(fast==<span class="keyword">null</span>||fast.<span class="keyword">next</span>==<span class="keyword">null</span>)<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">     slow=head;  </span><br><span class="line">     <span class="keyword">while</span>(slow!=fast)&#123;  </span><br><span class="line">         slow=slow.<span class="keyword">next</span>;  </span><br><span class="line">         fast=fast.<span class="keyword">next</span>;  </span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> slow;  </span><br><span class="line">       </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="已知一个单链表中存在环，求进入环中的第一个节点（利用hashmap）">已知一个单链表中存在环，求进入环中的第一个节点（利用hashmap）</h3><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Node getFirstNodeInCycleHashMap(Node head)&#123;  </span><br><span class="line">     Node target=<span class="keyword">null</span>;  </span><br><span class="line">     <span class="keyword">HashMap</span>&lt;Node,Boolean&gt; <span class="built_in">map</span>=<span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;Node,Boolean&gt;();  </span><br><span class="line">     <span class="keyword">while</span>(head!=<span class="keyword">null</span>)&#123;  </span><br><span class="line">         <span class="keyword">if</span>(<span class="built_in">map</span>.containsKey(head))target=head;  </span><br><span class="line">         <span class="keyword">else</span>&#123;  </span><br><span class="line">             <span class="built_in">map</span>.put(head, <span class="keyword">true</span>);  </span><br><span class="line">         &#125;  </span><br><span class="line">         head=head.next;  </span><br><span class="line">     &#125;  </span><br><span class="line">     <span class="keyword">return</span> target;  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="判断两个单链表是否相交,如果相交返回第一个节点，否则返回null（Y型）">判断两个单链表是否相交,如果相交返回第一个节点，否则返回null（Y型）</h3><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="function">Node <span class="title">isIntersect</span><span class="params">(Node head1,Node head2)</span></span>&#123;  </span><br><span class="line">     Node <span class="keyword">target</span>=<span class="keyword">null</span>;  </span><br><span class="line">     <span class="keyword">if</span>(head1==<span class="keyword">null</span>||head2==<span class="keyword">null</span>)<span class="keyword">return</span> <span class="keyword">target</span>;  </span><br><span class="line">     <span class="keyword">int</span> len1=getListLength(head1);  </span><br><span class="line">     <span class="keyword">int</span> len2=getListLength(head2);  </span><br><span class="line">     <span class="keyword">if</span>(len1&gt;=len2)&#123;  </span><br><span class="line">         <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len1-len2;i++)&#123;  </span><br><span class="line">             head1=head1.next;  </span><br><span class="line">         &#125;  </span><br><span class="line">     &#125;<span class="keyword">else</span>&#123;  </span><br><span class="line">         <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len2-len1;i++)&#123;  </span><br><span class="line">             head2=head2.next;  </span><br><span class="line">         &#125;  </span><br><span class="line">     &#125;  </span><br><span class="line">     <span class="keyword">while</span>(head1!=<span class="keyword">null</span>&amp;&amp;head2!=<span class="keyword">null</span>)&#123;  </span><br><span class="line">         <span class="keyword">if</span>(head1==head2)&#123;  </span><br><span class="line">             <span class="keyword">target</span>=head1;  </span><br><span class="line">             <span class="keyword">break</span>;  </span><br><span class="line">         &#125;  </span><br><span class="line">         <span class="keyword">else</span>&#123;  </span><br><span class="line">             head1=head1.next;  </span><br><span class="line">             head2=head2.next;  </span><br><span class="line">         &#125;  </span><br><span class="line">     &#125;  </span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">target</span>;  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="给出一单链表头指针head和一节点指针delete，O(1)时间复杂度删除节点delete_（交换值）">给出一单链表头指针head和一节点指针delete，O(1)时间复杂度删除节点delete （交换值）</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> deleteNode(Node head,Node <span class="keyword">delete</span>)&#123;  </span><br><span class="line">        <span class="comment">//首先处理delete节点为最后一个节点的情况  </span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">delete</span>==<span class="keyword">null</span>)<span class="keyword">return</span>;  </span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">delete</span>.<span class="keyword">next</span>==<span class="keyword">null</span>)&#123;  </span><br><span class="line">            <span class="keyword">if</span>(head==<span class="keyword">delete</span>)head=<span class="keyword">null</span>;  </span><br><span class="line">            <span class="keyword">else</span>&#123;  </span><br><span class="line">                Node temp=head;  </span><br><span class="line">                <span class="keyword">while</span>(temp.<span class="keyword">next</span>!=<span class="keyword">delete</span>)&#123;  </span><br><span class="line">                    temp=temp.<span class="keyword">next</span>;  </span><br><span class="line">                &#125;  </span><br><span class="line">                temp.<span class="keyword">next</span>=<span class="keyword">null</span>;  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">else</span>&#123;  </span><br><span class="line">            <span class="keyword">delete</span>.value=<span class="keyword">delete</span>.<span class="keyword">next</span>.value;  </span><br><span class="line">            <span class="keyword">delete</span>.<span class="keyword">next</span>=<span class="keyword">delete</span>.<span class="keyword">next</span>.<span class="keyword">next</span>;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/java/">java</a><a href="/tags/单链表/">单链表</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yangqinghua.com/2016/02/20/链表操作总结/" data-title="单链表操作总结 | Tsinghua&#39;s Blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/01/30/猴年猴赛雷/"  title="猴年猴赛雷">
+ <strong>下一篇：</strong><br/> 
+ <span>猴年猴赛雷
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/02/20/链表操作总结/" data-title="单链表操作总结" data-url="http://yangqinghua.com/2016/02/20/链表操作总结/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#单链表的定义"><span class="toc-number">1.</span> <span class="toc-text">单链表的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单链表的构造"><span class="toc-number">2.</span> <span class="toc-text">单链表的构造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从头到尾打印链表打印单链表"><span class="toc-number">3.</span> <span class="toc-text">从头到尾打印链表打印单链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从尾到头打印单链表（递归）"><span class="toc-number">4.</span> <span class="toc-text">从尾到头打印单链表（递归）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从尾到头打印单链表（借助栈）"><span class="toc-number">5.</span> <span class="toc-text">从尾到头打印单链表（借助栈）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#求单链表中结点的个数"><span class="toc-number">6.</span> <span class="toc-text">求单链表中结点的个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将单链表反转(循环)"><span class="toc-number">7.</span> <span class="toc-text">将单链表反转(循环)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将单链表反转(递归)"><span class="toc-number">8.</span> <span class="toc-text">将单链表反转(递归)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找单链表中的倒数第K个结点"><span class="toc-number">9.</span> <span class="toc-text">查找单链表中的倒数第K个结点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找单链表的中间结点（快慢指针）"><span class="toc-number">10.</span> <span class="toc-text">查找单链表的中间结点（快慢指针）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#合并两个有序的单链表head1和head2（循环）"><span class="toc-number">11.</span> <span class="toc-text">合并两个有序的单链表head1和head2（循环）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对单链表进行排序（插入）"><span class="toc-number">12.</span> <span class="toc-text">对单链表进行排序（插入）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对单链表进行排序（归并）"><span class="toc-number">13.</span> <span class="toc-text">对单链表进行排序（归并）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#合并两个有序的单链表head1和head2（递归）"><span class="toc-number">14.</span> <span class="toc-text">合并两个有序的单链表head1和head2（递归）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断一个单链表中是否有环（快慢指针）"><span class="toc-number">15.</span> <span class="toc-text">判断一个单链表中是否有环（快慢指针）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断一个单链表中是否有环，并求进入环中的第一个节点（快慢指针）"><span class="toc-number">16.</span> <span class="toc-text">判断一个单链表中是否有环，并求进入环中的第一个节点（快慢指针）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#已知一个单链表中存在环，求进入环中的第一个节点（利用hashmap）"><span class="toc-number">17.</span> <span class="toc-text">已知一个单链表中存在环，求进入环中的第一个节点（利用hashmap）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断两个单链表是否相交,如果相交返回第一个节点，否则返回null（Y型）"><span class="toc-number">18.</span> <span class="toc-text">判断两个单链表是否相交,如果相交返回第一个节点，否则返回null（Y型）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#给出一单链表头指针head和一节点指针delete，O(1)时间复杂度删除节点delete_（交换值）"><span class="toc-number">19.</span> <span class="toc-text">给出一单链表头指针head和一节点指针delete，O(1)时间复杂度删除节点delete （交换值）</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Algorithm/" title="Algorithm">Algorithm<sup>7</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Linux/" title="Linux">Linux<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Python/" title="Python">Python<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/随笔生活/" title="随笔生活">随笔生活<sup>3</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/java/" title="java">java<sup>8</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/笔试/" title="笔试">笔试<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/python/" title="python">python<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/爬虫/" title="爬虫">爬虫<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/递归/" title="递归">递归<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/单链表/" title="单链表">单链表<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/字符串/" title="字符串">字符串<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linux基础/" title="linux基础">linux基础<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LeetCode/" title="LeetCode">LeetCode<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/生活/" title="生活">生活<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/排序/" title="排序">排序<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/正则表达式/" title="正则表达式">正则表达式<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2651697902&verifier=a47fdc6f&dpc=1"></iframe>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello,I&#39;m yangqinghua. For now I&#39;m a graduate student in Beijing. <br/>
+			I want to use this blog to record my life</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2651697902 for http://weibo.com/2651697902" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="yangqinghua">yangqinghua</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"tsinghua"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fcb0b1d4dd32c069cb98cb4dbbb157bae' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
